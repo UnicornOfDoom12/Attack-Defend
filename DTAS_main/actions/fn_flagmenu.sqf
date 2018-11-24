@@ -31,7 +31,7 @@ aPosHandler =
 	}
 	else
 	{
-		if (((surfaceIsWater _pos)) && requestedInsertionType == 0) then
+		if (((surfaceIsWater _pos)) && requestedInsertionType == 0 || requestedInsertionType == 4) then
 		{
 			hint localize "STR_InvalidPositionWater";
 		}
