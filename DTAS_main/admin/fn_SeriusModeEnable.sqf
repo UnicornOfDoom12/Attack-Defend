@@ -1,0 +1,2 @@
+SeriousMode = true;
+publicVariable "SeriousMode";

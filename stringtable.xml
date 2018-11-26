@@ -620,6 +620,12 @@
 		<Key ID="STR_UnPauseRoundStart">
 			<English>Un-pause round start.</English>
 		</Key>
+		<Key ID="STR_SeriousModeE">
+			<English>Enable Serious mode</English>
+		</Key>
+		<Key ID="STR_SeriousModeD">
+			<English>Disable Serious mode</English>
+		</Key>
 		<Key ID="STR_ReLocateObjectivePosition">
 			<English>Re-locate objective position.</English>
 		</Key>
