@@ -31,13 +31,13 @@ aPosHandler =
 	}
 	else
 	{
-		if (((surfaceIsWater _pos)) && requestedInsertionType == 0 || requestedInsertionType == 4) then
+		if (((surfaceIsWater _pos)) && (requestedInsertionType == 0 || requestedInsertionType == 4)) then
 		{
 			hint localize "STR_InvalidPositionWater";
 		}
 		else
 		{
-			if ((!(surfaceIsWater _pos)) && (requestedInsertionType == 1 || requestedInsertionType == 2)) then
+			if ((!(surfaceIsWater _pos)) && (requestedInsertionType == 1 || requestedInsertionType == 2 )) then
 			{
 				hint localize "STR_InvalidPositionLand";
 			}
@@ -110,3 +110,5 @@ _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ForceRoundSta
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_PauseRoundStart"], {_this call DFUNC(pauseRoundStart)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 1) && !adminPaused"];
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_UnpauseRoundStart"], {_this call DFUNC(unPauseRoundStart)}, [], 0, false, false, "", "(call ADC_fnc_adminlevel >= 1) && adminPaused"];
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ReLocateObjectivePosition"], {_this call DFUNC(relocate)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 3) && !roundInProgress"];
+_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeE"], {_this call DFUNC(SeriousModeEnable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
+_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeD"], {_this call DFUNC(SeriousModeDisable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];

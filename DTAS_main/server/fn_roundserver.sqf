@@ -10,6 +10,8 @@ fnc_startPos = DFUNC(startPos);
 
 scoreW = 0;
 publicVariable "scoreW";
+SeriousMode = false; // maybe
+publicVariable "SeriousMode";
 scoreE = 0;
 publicVariable "scoreE";
 bObjW = false;
@@ -29,7 +31,6 @@ trgObj setTriggerArea [capRad, capRad, 0, false];
 currentSetupTime = FirstRoundSetupTime;
 canChangeObjPos = true;
 publicVariable "canChangeObjPos";
-
 ADC_VoteList = [];
 publicVariable "ADC_VoteList";
 lastObjPosMarker = "";
@@ -436,13 +437,20 @@ while {true} do
 					// Ifrit , Hunter, Strider
 					case 0:
 					{
+
 						_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
+						if (SeriousMode) then{
+							_vehType = "O_MRAP_02_F";
+						};
 						_slotCount = _jeepCrewCount;
 					};
 					// Boat
 					case 1:
 					{
 						_vehType = selectRandom ["B_Boat_Transport_01_F", "B_Lifeboat", "B_G_Boat_Transport_02_F"];
+						if (SeriousMode) then{
+							_vehType = "B_G_Boat_Transport_02_F";
+						};
 						_slotCount = 5;
 					};
 					// Submarine
@@ -455,6 +463,9 @@ while {true} do
 					case 3:
 					{
 						_vehType = selectRandom [ "O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
+						if (SeriousMode) then{
+							_vehType = "O_Heli_Light_02_unarmed_F";
+						};
 						_slotCount = 4;
 					};
 					//Prowler
@@ -473,6 +484,9 @@ while {true} do
 			_bSpawn = (count _units > 0); // Counts through the array units where the value is more than one
 
 			_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
+			if (SeriousMode) then{
+				_vehType = "O_MRAP_02_F";
+			};
 			_slotCount = 4;
 		};
 
@@ -517,7 +531,7 @@ while {true} do
 					_spawnMode = "FLY";
 				};
 				//_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"]; // we might have to delete this if helis/boats dont work
-				_veh = createVehicle [_vehType, _pos, [], 3, _spawnMode];
+				_veh = createVehicle [_vehType, _pos, [], 4, _spawnMode]; //change the 4 to 3 if broken!!!!
 				_veh setDir _aStartDir;
 
 				clearWeaponCargoGlobal _veh;
@@ -540,8 +554,26 @@ while {true} do
 					} forEach [_tex,[0.02,0.02,0.02,1]]
 					*/
 					{
-					_veh setObjectTextureGlobal [0,"Textures\hunterb.paa"];
-					_veh setObjectTextureGlobal [1,"Textures\hunterc.paa"];
+					_veh setObjectTextureGlobal [0,"Textures\hunterfront.paa"];
+					_veh setObjectTextureGlobal [1,"Textures\hunterback.paa"];
+					}forEach [_tex,[0.02,0.02,0.02,1]]
+				};
+				if (_veh isKindOf "O_MRAP_02_F") then 
+				{
+					
+					//White			//Yellow    //Pink			//Cyan				//Black						//Purple			//Blue					//Red				//Green
+					private _tex = selectRandom [[1,1,1,0.8],[1,1,0,0.8],[1,0,0.2,0.8],[0,1,1,0.8],[0.02,0.02,0.02,1],[0.2,0,1,0.8],[0,0.2,1,0.8], [1,0,0,1], [0,1,0.3,0.8]];
+					{
+						_x params ["_red", "_green", "_blue", "_alpha"];
+						private _format = format ["#(rgb,8,8,3)color(%1,%2,%3,%4)", _red, _green, _blue, _alpha];
+						_veh setObjectTextureGlobal [_forEachIndex, _format];
+					} forEach [_tex,[0.02,0.02,0.02,1]]
+					
+				};
+				if (_veh isKindOf "B_Heli_Light_01_F") then 
+				{
+					{
+					_veh setObjectTextureGlobal [0,"Textures\hummingbird.paa"];	
 					}forEach [_tex,[0.02,0.02,0.02,1]]
 				};
 			};

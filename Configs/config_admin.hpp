@@ -15,12 +15,14 @@ class adminWhiteList {
   };
 
   class adminLevelThree {
-    playerids[] = { "76561198090120592","76561198110128838", "76561198051160316", "", "" };
+  //Nuclear, Malley, Simen,Butch
+    playerids[] = { "76561198090120592","76561198110128838","76561198051160316","76561198121847178", "" };
   };
 };
 
 class adminCommands {
-  class forceStart {
+  class forceStart 
+  {
     level = 2;
     displayName = "Force Round Start";
     action = "call DTAS_fnc_forceRoundStart";
@@ -28,7 +30,8 @@ class adminCommands {
     picture = "\a3\ui_f\data\IGUI\Cfg\Actions\ico_on_ca.paa";
   };
 
-  class pauseStart {
+  class pauseStart 
+  {
     level = 1;
     displayName = "Pause Round Start";
     action = "call DTAS_fnc_pauseRoundStart";
@@ -36,7 +39,8 @@ class adminCommands {
     picture = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_deactivate_ca.paa";
   };
 
-  class unPauseStart {
+  class unPauseStart 
+  {
     level = 1;
     displayName = "Unpause Round Start";
     action = "call DTAS_fnc_unPauseRoundStart";
@@ -44,11 +48,26 @@ class adminCommands {
     picture = "\a3\ui_f\data\IGUI\Cfg\Actions\settimer_ca.paa";
   };
 
-  class moveObj {
+  class moveObj 
+  {
     level = 3;
     displayName = "Relocate Objective";
     action = "call DTAS_fnc_relocate";
     condition = "!roundInProgress";
     picture = "\a3\ui_f\data\GUI\Cfg\Cursors\move_gs.paa";
+  };
+  class SeriousModeEnable
+  {
+  level = 3;
+  displayName = "Enable Serius Mode";
+  action = "call DTAS_fnc_SeriousModeEnable";
+  condition = "!roundInProgress";
+  };
+  class SeriousModeDisable
+  {
+  level = 3;
+  displayName = "Enable Serius Mode";
+  action = "call DTAS_fnc_SeriousModeDisable";
+  condition = "!roundInProgress";
   };
 };
