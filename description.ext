@@ -35,7 +35,7 @@ class CfgSounds
 class Header
 {
 	gameType = Team Deathmatch;
-	minPlayers = 4;
+	minPlayers = 2;
 	maxPlayers = 40;
 };
 
@@ -272,7 +272,7 @@ author = "Nuclear & Malley";
 onLoadName = "A&D for fun! =)";
 overviewText = "Attack and Defend By Nuclear & Malley";
 onLoadMission = $STR_BriefingDescription;
-loadScreen = "images/Intro.paa";
-overviewPicture = "images/Intro.paa";
+loadScreen = "images\intro.paa";
+overviewPicture = "images\intro.paa";
 onLoadIntroTime = 0;
 joinUnassigned = 0;

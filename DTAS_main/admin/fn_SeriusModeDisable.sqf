@@ -1,2 +1,0 @@
-SeriousMode = false;
-publicVariable "SeriousMode";

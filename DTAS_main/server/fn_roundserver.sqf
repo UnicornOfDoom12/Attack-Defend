@@ -10,7 +10,7 @@ fnc_startPos = DFUNC(startPos);
 
 scoreW = 0;
 publicVariable "scoreW";
-//SeriousMode = false; // maybe delete this shit
+SeriousMode = false; // maybe
 publicVariable "SeriousMode";
 scoreE = 0;
 publicVariable "scoreE";
@@ -439,8 +439,8 @@ while {true} do
 					{
 
 						_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
-						if (SeriousMode==True) then{
-							_vehType = "O_MRAP_02_F";
+						if (SeriousMode) then{
+							_vehType = "B_MRAP_01_gmg_F";
 						};
 						_slotCount = _jeepCrewCount;
 					};
@@ -448,7 +448,7 @@ while {true} do
 					case 1:
 					{
 						_vehType = selectRandom ["B_Boat_Transport_01_F", "B_Lifeboat", "B_G_Boat_Transport_02_F"];
-						if (SeriousMode==True) then{
+						if (SeriousMode) then{
 							_vehType = "B_G_Boat_Transport_02_F";
 						};
 						_slotCount = 5;
@@ -463,7 +463,7 @@ while {true} do
 					case 3:
 					{
 						_vehType = selectRandom [ "O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
-						if (SeriousMode==True) then{
+						if (SeriousMode) then{
 							_vehType = "O_Heli_Light_02_unarmed_F";
 						};
 						_slotCount = 4;
@@ -484,6 +484,9 @@ while {true} do
 			_bSpawn = (count _units > 0); // Counts through the array units where the value is more than one
 
 			_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
+			if (SeriousMode) then{
+				_vehType = "O_MRAP_02_F";
+			};
 			_slotCount = 4;
 		};
 

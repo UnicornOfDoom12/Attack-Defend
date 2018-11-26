@@ -56,11 +56,18 @@ class adminCommands {
     condition = "!roundInProgress";
     picture = "\a3\ui_f\data\GUI\Cfg\Cursors\move_gs.paa";
   };
-  class SeriusMode
+  class SeriousModeEnable
   {
   level = 3;
   displayName = "Enable Serius Mode";
-  action = ;
+  action = "call DTAS_fnc_SeriousModeEnable";
+  condition = "!roundInProgress";
+  };
+  class SeriousModeDisable
+  {
+  level = 3;
+  displayName = "Enable Serius Mode";
+  action = "call DTAS_fnc_SeriousModeDisable";
   condition = "!roundInProgress";
   };
 };
