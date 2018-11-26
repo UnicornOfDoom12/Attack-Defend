@@ -440,7 +440,7 @@ while {true} do
 
 						_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
 						if (SeriousMode) then{
-							_vehType = "B_MRAP_01_gmg_F";
+							_vehType = "O_MRAP_02_F";
 						};
 						_slotCount = _jeepCrewCount;
 					};
