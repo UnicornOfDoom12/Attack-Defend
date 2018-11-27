@@ -41,7 +41,7 @@ while {true} do
 	_pausedString = "";
 	if (adminPaused && !roundInProgress) then
 	{
-		_pausedString = " (P)";
+		_pausedString = " (Paused)";
 	};
 	_displayString = format ["%1:%2%3%4", _minutes, floor (_seconds / 10), floor (_seconds mod 10), _pausedString];
 	["update", [_displayString]] call FUNC(hudHandler);

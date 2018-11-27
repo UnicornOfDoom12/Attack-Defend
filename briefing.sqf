@@ -13,4 +13,6 @@ player createDiaryRecord ["Diary", [localize "STR_CaptureSystem", localize "STR_
 
 player createDiaryRecord ["Diary", [localize "STR_Insertion", format ["%1<br/><br/>%2<br/><br/>%3<br/><br/>%4", format [localize "STR_Insertion1", minDist], localize "STR_Insertion2", format [localize "STR_Insertion3", setupTime], localize "STR_Insertion4"]]];
 
-player createDiaryRecord ["Diary", [localize "STR_Mission", format [format ["%1 <marker name='mrkObj'>%2</marker> %3", localize "STR_Mission1", localize "STR_Mission2", localize "STR_Mission3"], timeLimit/60, maxScore, 2*maxScore-1]]]
+player createDiaryRecord ["Diary", [localize "STR_Mission", format [format ["%1 <marker name='mrkObj'>%2</marker> %3", localize "STR_Mission1", localize "STR_Mission2", localize "STR_Mission3"], timeLimit/60, maxScore, 2*maxScore-1]]];
+
+player createDiaryRecord ["Diary", [localize "STR_Versions", localize "STR_Changelog"]];

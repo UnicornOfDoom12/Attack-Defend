@@ -2,6 +2,7 @@
 /*
 *   @File: fn_keyDownHandler.sqf
 *   @Author: Sig
+*   @Edited by : Nuclear
 *
 *   Description: Key down handler
 *
@@ -40,7 +41,8 @@ for "_i" from 0 to 9 do {
   private _select = format ["SelectGroupUnit%1", _i];
   if (_key in actionKeys _cmd || _key in actionkeys _select) then {_overRun = true};
 };
-/*
+
+/* JUMP SCRIPT COMMENTED OUT
 if (_key in actionKeys "GetOver") then {
   if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player in ["STAND", "CROUCH"]} && {speed player > 2} && {((velocity player) select 2) < 2.5} && {time - (player getVariable [VARQ(jumpActionTime), 0]) > 1.5}) exitWith {
     player setVariable [VARQ(jumpActionTime), time, true];

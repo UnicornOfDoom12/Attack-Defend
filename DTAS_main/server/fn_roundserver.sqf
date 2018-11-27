@@ -432,47 +432,92 @@ while {true} do
 				_bSpawn = true;
 				_unitsWithoutGroup = _unitsWithoutGroup - _units;
 				_slotCount = 0;
-				switch (_group getVariable ["insertionType", 0]) do
+				//Adding an IF statement for serious mode here to improve the whole efficiency of the switch case
+				
+				if (SeriousMode)then
 				{
-					// Ifrit , Hunter, Strider
-					case 0:
+					//New switch case for when Serious Mode is ON
+					switch (_group getVariable ["insertionType", 0]) do
 					{
+						// Ifrit , Hunter, Strider
+						case 0:
+						{
 
-						_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
-						if (SeriousMode) then{
 							_vehType = "O_MRAP_02_F";
+							_slotCount = 5;
 						};
-						_slotCount = _jeepCrewCount;
-					};
-					// Boat
-					case 1:
-					{
-						_vehType = selectRandom ["B_Boat_Transport_01_F", "B_Lifeboat", "B_G_Boat_Transport_02_F"];
-						if (SeriousMode) then{
+						// Boat
+						case 1:
+						{	
 							_vehType = "B_G_Boat_Transport_02_F";
+							_slotCount = 5;
 						};
-						_slotCount = 5;
-					};
-					// Submarine
-					case 2:
-					{
-						_vehType = "B_SDV_01_F";
-						_slotCount = 4;
-					};
-					// Orca , hummingbird, taru bench
-					case 3:
-					{
-						_vehType = selectRandom [ "O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
-						if (SeriousMode) then{
+						// Submarine
+						case 2:
+						{
+							_vehType = "B_SDV_01_F";
+							_slotCount = 4;
+							_vehType addItemCargo ["V_RebreatherIR", 3];
+						};
+						// Orca , hummingbird, taru bench
+						case 3:
+						{				
 							_vehType = "O_Heli_Light_02_unarmed_F";
+							_slotCount = 4;
 						};
-						_slotCount = 4;
+						//Prowler
+						case 4:
+						{
+							_vehType = "B_LSV_01_unarmed_black_F";
+							_slotCount = 7;
+						};
 					};
-					//Prowler
-					case 4:
+				}
+				else //new if else inside is the old switch case for Serious mode OFF
+				{
+					switch (_group getVariable ["insertionType", 0]) do
 					{
-						_vehType = "B_LSV_01_unarmed_black_F";
-						_slotCount = 7;
+						// Ifrit , Hunter, Strider
+						case 0:
+						{
+
+							_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
+							if (SeriousMode) then{
+								_vehType = "O_MRAP_02_F";
+							};
+							_slotCount = _jeepCrewCount;
+						};
+						// Boat
+						case 1:
+						{
+							_vehType = selectRandom ["B_Boat_Transport_01_F", "B_Lifeboat", "B_G_Boat_Transport_02_F"];
+							if (SeriousMode) then{
+								_vehType = "B_G_Boat_Transport_02_F";
+							};
+							_slotCount = 5;
+						};
+						// Submarine
+						case 2:
+						{
+							_vehType = "B_SDV_01_F";
+							_slotCount = 4;
+							_vehType addItemCargo ["V_RebreatherIR", 3];
+						};
+						// Orca , hummingbird, taru bench
+						case 3:
+						{
+							_vehType = selectRandom [ "O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
+							if (SeriousMode) then{
+								_vehType = "O_Heli_Light_02_unarmed_F";
+							};
+							_slotCount = 4;
+						};
+						//Prowler
+						case 4:
+						{
+							_vehType = "B_LSV_01_unarmed_black_F";
+							_slotCount = 7;
+						};
 					};
 				};
 			};
@@ -530,7 +575,6 @@ while {true} do
 				{
 					_spawnMode = "FLY";
 				};
-				//_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"]; // we might have to delete this if helis/boats dont work
 				_veh = createVehicle [_vehType, _pos, [], 4, _spawnMode]; //change the 4 to 3 if broken!!!!
 				_veh setDir _aStartDir;
 
@@ -542,26 +586,15 @@ while {true} do
 
 				if (_veh isKindOf "B_MRAP_01_F") then 
 				{
-					
-					//White			//Yellow    //Pink			//Cyan				//Black						//Purple			//Blue					//Red				//Green
-					//private _tex = selectRandom [[1,1,1,0.8],[1,1,0,0.8],[1,0,0.2,0.8],[0,1,1,0.8],[0.02,0.02,0.02,1],[0.2,0,1,0.8],[0,0.2,1,0.8], [1,0,0,1], [0,1,0.3,0.8]];
-					//[0,"Textures\hunterc.paa"] [1,"Textures\hunterb.paa"]
-					/*private _tex = selectRandom [[0.02,0.02,0.02,1]];
 					{
-						_x params ["_red", "_green", "_blue", "_alpha"];
-						private _format = format ["#(rgb,8,8,3)color(%1,%2,%3,%4)", _red, _green, _blue, _alpha];
-						_veh setObjectTextureGlobal [_forEachIndex, _format];
-					} forEach [_tex,[0.02,0.02,0.02,1]]
-					*/
-					{
-					_veh setObjectTextureGlobal [0,"Textures\hunterfront.paa"];
-					_veh setObjectTextureGlobal [1,"Textures\hunterback.paa"];
+						_veh setObjectTextureGlobal [0,"Textures\hunterfront.paa"];
+						_veh setObjectTextureGlobal [1,"Textures\hunterback.paa"];
 					}forEach [_tex,[0.02,0.02,0.02,1]]
 				};
 				if (_veh isKindOf "O_MRAP_02_F") then 
 				{
 					
-					//White			//Yellow    //Pink			//Cyan				//Black						//Purple			//Blue					//Red				//Green
+											  	//White	       //Yellow    //Pink		//Cyan			//Black			//Purple		//Blue		//Red		//Green
 					private _tex = selectRandom [[1,1,1,0.8],[1,1,0,0.8],[1,0,0.2,0.8],[0,1,1,0.8],[0.02,0.02,0.02,1],[0.2,0,1,0.8],[0,0.2,1,0.8], [1,0,0,1], [0,1,0.3,0.8]];
 					{
 						_x params ["_red", "_green", "_blue", "_alpha"];
@@ -570,10 +603,11 @@ while {true} do
 					} forEach [_tex,[0.02,0.02,0.02,1]]
 					
 				};
+
 				if (_veh isKindOf "B_Heli_Light_01_F") then 
 				{
 					{
-					_veh setObjectTextureGlobal [0,"Textures\hummingbird.paa"];	
+						_veh setObjectTextureGlobal [0,"Textures\hummingbird.paa"];	
 					}forEach [_tex,[0.02,0.02,0.02,1]]
 				};
 			};
