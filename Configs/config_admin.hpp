@@ -70,4 +70,11 @@ class adminCommands {
   action = "call DTAS_fnc_SeriousModeDisable";
   condition = "!roundInProgress";
   };
+  class SeriousModeHandler
+  {
+  level = 3;
+  displayName = "Enable/Disable Serious Mode";
+  action = "call DTAS_fnc_SeriousModeHandler";
+  condition = "!roundInProgress";
+  }
 };
