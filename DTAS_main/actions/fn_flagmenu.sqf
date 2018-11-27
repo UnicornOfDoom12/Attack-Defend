@@ -110,6 +110,6 @@ _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ForceRoundSta
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_PauseRoundStart"], {_this call DFUNC(pauseRoundStart)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 1) && !adminPaused"];
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_UnpauseRoundStart"], {_this call DFUNC(unPauseRoundStart)}, [], 0, false, false, "", "(call ADC_fnc_adminlevel >= 1) && adminPaused"];
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ReLocateObjectivePosition"], {_this call DFUNC(relocate)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 3) && !roundInProgress"];
-_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeE"], {_this call DFUNC(SeriousModeEnable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
-_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeD"], {_this call DFUNC(SeriousModeDisable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
+//_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeE"], {_this call DFUNC(SeriousModeEnable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
+//_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeD"], {_this call DFUNC(SeriousModeDisable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeTog"], {_this call DFUNC(SeriousModeHandler)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
