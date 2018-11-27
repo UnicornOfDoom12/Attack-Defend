@@ -83,6 +83,7 @@ class DTAS_Base {
     class unpauseRoundStart {};
     class SeriousModeEnable {};
     class SeriousModeDisable {};
+    class SeriousModeHandler {};
   };
 
   class cursorNames {

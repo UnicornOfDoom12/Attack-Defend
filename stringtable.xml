@@ -631,6 +631,9 @@
 		<Key ID="STR_DefendTheZone">
 			<English>Defend The Zone!</English>
 		</Key>
+		<Key ID = "STR_SeriousModeTog">
+			<English>Toggle the serious mode</English>
+		</Key>
 		<Key ID="STR_DefendTheZoneLong">
 			<English>Do not let attackers get inside the zone.</English>
 		</Key>
