@@ -1,4 +1,3 @@
-systemChat "SeriousModeDisable";
-hint "SeriousMode is off babay";
+hint "Serious Mode is OFF";
 SeriousMode = false;
 publicVariable "SeriousMode";

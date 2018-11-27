@@ -4,26 +4,21 @@
 	<Container name="Mods">
 		<Key ID="STR_RemoveMitsnefet">
 			<English>Remove mitsnefet</English>
-			<Russian>Снять мицнефет(шлем)</Russian>
 		</Key>
 		<Key ID="STR_PutOnMitsnefet">
 			<English>Put on mitsnefet</English>
-			<Russian>Одеть мицнефет (шлем)</Russian>
 		</Key>
 		<Key ID="STR_SelectMitsnefet">
 			<English>Select mitsnefet %1</English>
-			<Russian>Выбрать мицнефет %1</Russian>
 		</Key>
 		<Key ID="STR_MissingMods">
 			<English>Server is running the following mods, but you are not:</English>
 		</Key>
 		<Key ID="STR_MissingTFRMod">
 			<English>Server is running Task Force Radio Arrowhead mod, but you are not!</English>
-			<Russian>На сервере установлен мод Task Force Radio Arrowhead, но у вас его не обнаружено</Russian>
 		</Key>
 		<Key ID="STR_InstallPWS">
 			<English>Install Play withSIX (play.withsix.com) to install, update and run required mods.</English>
-			<Russian>Установите Play withSIX (play.withsix.com), обновите и запустите нужные моды.</Russian>
 		</Key>
 	</Container>
 	<Container name="CursorNames">
@@ -58,26 +53,21 @@
 	<Container name="Briefing">
 		<Key ID="STR_BriefingDescription">
 			<English>Attack and Defend by Nuclear and Malley: Randomized round-based attack/defend PvP mission with no respawns.</English>
-			<Russian>Динамический захват и зачистка от Галь Зохара - Рандомальная атака и защита основанная на раундах миссия ПВП без респаунов.</Russian>
 		</Key>
 		<Key ID="STR_DTAS">
 			<English>DTAS</English>
-			<Russian>ДИТАС</Russian>
 		</Key>
 		<Key ID="STR_GalZohar">
 			<English>Nuclear and Malley</English>
-			<Russian>Галь Зохар</Russian>
 		</Key>
 		<Key ID="STR_Credits">
 			<English>Credits</English>
 		</Key>
 		<Key ID="STR_Credits1">
-			<English>Mission by Nuclear</English>
-			<Russian>Миссия от Галь Зохар</Russian>
+			<English>Mission by Nuclear and Malley</English>
 		</Key>
 		<Key ID="STR_Credits2">
 			<English>Attack and Defend by Nuclear and Malley.</English>
-			<Russian>Под вдохновением миссии DTAS (Dynamic Take And Secure) для инфилитрации, которая является конверией мода для оригинального Unreal Tournament (1999).</Russian>
 		</Key>
 		<Key ID="STR_Credits3">
 			<English>Logo and Russian localization by Excess3.</English>
@@ -93,45 +83,42 @@
 		</Key>
 		<Key ID="STR_Spectating3">
 			<English> You can press the lean keys (default 'q' or 'e') to exit the spectator script and change your weapon loadout.</English>
-			<Russian></Russian>
 		</Key>
 		<Key ID="STR_Spectating4">
 			<English>Use the action menu on the yellow cinderblocks in order to resume spectating.</English>
-			<Russian></Russian>
 		</Key>
 		<Key ID="STR_Equipment">
 			<English>Equipment</English>
-			<Russian>Снаряжение</Russian>
 		</Key>
 		<Key ID="STR_Equipment1">
 			<English>Select your equipment using the action menu on an ammo crate. Weapons and ammunition will be given once round starts.</English>
-			<Russian>Выбирите ваше снаряжение используя action menu на ящике боеприпасов. Оружие и боеприпасы будут выданны с началом раунда.</Russian>
 		</Key>
 		<Key ID="STR_Equipment2">
 			<English>Attackers and defenders have different loadout options. When you play as attack (or defense), your default loadout will be the last loadout you selected when you last played on attack (or defense).</English>
 		</Key>
 		<Key ID="STR_LastPlayersCountdown">
 			<English>Last players countdown</English>
-			<Russian>Отщет для последних играков</Russian>
 		</Key>
 		<Key ID="STR_LastPlayersCountdown1">
 			<English>When only 1/10 or less of the attacking force are left alive, or when only 1 attacker is left alive, time limit will be cut down to %1 seconds. Attackers will be notified, but defenders will only find out once the time runs out and their mission is successful.</English>
-			<Russian>Когда только 1/10 или меньше от атакующей команды в живых, или только один атакующий жив, ограничение времени будет уменьшенно до %1 секунд. Атакующие будут оповещены, но защитники изнают только тогда когда время истекет или миссия завершенна.</Russian>
 		</Key>
 		<Key ID="STR_RoundSystem">
 			<English>Round System</English>
-			<Russian>Система раунда</Russian>
 		</Key>
 		<Key ID="STR_RoundSystem1">
 			<English>Each round is limited %1 minutes (possibly cut short by last players countdown). Dead players will be sent to a remote location until next round starts. Attack and defense teams will switch roles after the first round and then every 2 rounds. The objective position will be changed every 2 rounds, so you always attack and defend each zone once.</English>
-			<Russian>Каждый раунд ограничен на %1 минут (может будет изменен взвязи с последними оставшимися). Мертвые играки будут отправлены на удаленные места до оканчания раунда. Команды атаки и защиты поменяются ролями(сторонами) после первого раунда и каждые два раунда. Место задания будет измененно каждые два раунда, так что вы атакуете и защищяете каждую зону по разу.</Russian>
 		</Key>
 		<Key ID="STR_CaptureSystem">
 			<English>Capture System</English>
-			<Russian>Система захвата</Russian>
+		</Key>
+		<Key ID="STR_Versions">
+			<English>Versions</English>
 		</Key>
 		<Key ID="STR_CaptureSystem1">
-			<English>Capture speed is slowest when attackers only have 1 man inside the zone, and lasts 60 seconds. Capture speed is increased significantly increased as more attackers enter the zone, but is never faster than 20 seconds capture time. Defenders have no notification of capture progress, so defenders must verify that the zone is clear of enemies if they wish to ensure their victory. You must be outside of vehicles and above sea level to capture the zone.</English>
+			<English>Capture speed is slowest when attackers only have 1 man inside the zone, and lasts 120 seconds. Capture speed is increased significantly increased as more attackers enter the zone, but is never faster than 20 seconds capture time. Defenders have no notification of capture progress, so defenders must verify that the zone is clear of enemies if they wish to ensure their victory. You must be outside of vehicles and above sea level to capture the zone.</English>
+		</Key>
+		<Key ID="STR_Version0.1">
+			<English>V 0.1 /n Added shit-tons of new locations to play</English>
 		</Key>
 		<Key ID="STR_Insertion">
 			<English>Insertion</English>
@@ -140,7 +127,7 @@
 			<English>Using the action menu of the yellow cinderblocks, an attacker squad leader will choose their insertion method and location, at least %1 meters away from the objective, and can then click ready. Round will starts once all squads with enough squad members are ready.</English>
 		</Key>
 		<Key ID="STR_Insertion2">
-			<English>Number of players required dependson the numebr of players on the server. If you do not have enough squad memebers, your squad leader will not have an option to choose insertion method and position.</English>
+			<English>Number of players required dependson the number of players on the server. If you do not have enough squad memebers, your squad leader will not have an option to choose insertion method and position.</English>
 		</Key>
 		<Key ID="STR_Insertion3">
 			<English>A default MRAP insertion location will be selected automatically and used if none were chosen after %2 seconds as well as for squads who did not have enough squad members.</English>
@@ -150,19 +137,15 @@
 		</Key>
 		<Key ID="STR_Mission">
 			<English>Mission</English>
-			<Russian>Миссия</Russian>
 		</Key>
 		<Key ID="STR_Mission1">
 			<English>Attackers should capture the</English>
-			<Russian>Атакующие должны захватить</Russian>
 		</Key>
 		<Key ID="STR_Mission2">
 			<English>objective area</English>
-			<Russian>зону задания</Russian>
 		</Key>
 		<Key ID="STR_Mission3">
 			<English>from the defenders before time runs out (%1 minutes), while defenders need to prevent them from completing their mission. Win at least %2 out of %3 times and at least 2 rounds more than the enemy team to win the entire game!</English>
-			<Russian>у защищающих до того как время (%1 минут) истекет ,в то время как защищающие должны предотвратить захват. Выиграть %2 из of %3 раз хотябы на 2 раунда больше чем враг чтобы выиграть в игре!</Russian>
 		</Key>
 		<Key ID="STR_Squads">
 			<English>Squad Management</English>
@@ -180,23 +163,18 @@
 	<Container name="General">
 		<Key ID="STR_Yes">
 			<English>Yes</English>
-			<Russian>Да</Russian>
 		</Key>
 		<Key ID="STR_No">
 			<English>No</English>
-			<Russian>Нет</Russian>
 		</Key>
 		<Key ID="STR_Enabled">
 			<English>Enabled</English>
-			<Russian>включено</Russian>
 		</Key>
 		<Key ID="STR_Disabled">
 			<English>Disabled</English>
-			<Russian>выключено</Russian>
 		</Key>
 		<Key ID="STR_TKMessage">
 			<English>%1 killed a teammate!</English>
-			<Russian>%1 убил союзника!</Russian>
 		</Key>
 		<Key ID="STR_UnStuck">
 			<English>Un-Stuck</English>
@@ -205,46 +183,36 @@
 	<Container name="Parameters">
 		<Key ID="STR_BestOfX">
 			<English>Best of X Rounds</English>
-			<Russian>Луюший из Х раундов</Russian>
 		</Key>
 		<Key ID="STR_Nightvision">
 			<English>Nightvision</English>
-			<Russian>ночное видение</Russian>
 		</Key>
 		<Key ID="STR_AttackersOnly">
 			<English>Attackers Only</English>
-			<Russian>Только атакуещие</Russian>
 		</Key>
 		<Key ID="STR_Everyone">
 			<English>Everyone</English>
-			<Russian>Все</Russian>
 		</Key>
 		<Key ID="STR_Nobody">
 			<English>Nobody</English>
-			<Russian>Никто</Russian>
 		</Key>
 		<Key ID="STR_NightDay">
 			<English>Night/Day</English>
-			<Russian>Ночь/День</Russian>
 		</Key>
 		<Key ID="STR_Day">
 			<English>Day</English>
-			<Russian>День</Russian>
 		</Key>
 		<Key ID="STR_FullMoon">
 			<English>Full Moon</English>
 		</Key>
 		<Key ID="STR_Moon34">
 			<English>3/4 Moon</English>
-			<Russian>3/4 Луны</Russian>
 		</Key>
 		<Key ID="STR_Moon12">
 			<English>1/2 Moon</English>
-			<Russian>1/2 Луны</Russian>
 		</Key>
 		<Key ID="STR_Moon14">
 			<English>1/4 Moon</English>
-			<Russian>1/4 Луны</Russian>
 		</Key>
 		<Key ID="STR_Clouds">
 			<English>Clouds</English>
@@ -257,48 +225,39 @@
 		</Key>
 		<Key ID="STR_NightWeapons">
 			<English>Night Vision Weapons</English>
-			<Russian>Орудия с ночным видинием</Russian>
 		</Key>
 		<Key ID="STR_PlanningTimeLimit">
 			<English>Attacker Planning Time Limit (Seconds)</English>
-			<Russian>Время составления плана для атакующих(Секунды)</Russian>
 		</Key>
 		<Key ID="STR_FirstRoundPlanningTimeLimit">
 			<English>First Round Attacker Planning Time Limit (Seconds)</English>
 		</Key>
 		<Key ID="STR_RoundTimeLimit">
 			<English>Round Time Limit (Minutes)</English>
-			<Russian>Ограничение времени в раунде (Минуты)</Russian>
 		</Key>
 		<Key ID="STR_LastPlayersCountdownSeconds">
 			<English>Last Players Countdown (Seconds)</English>
-			<Russian>Отсчет времени для последних играков (Секунды)</Russian>
 		</Key>
 		<Key ID="STR_AFKKillTime">
 			<English>Kill AFK Players After X Seconds</English>
 		</Key>
 		<Key ID="STR_MarkerNameLength">
 			<English>Marker Name Length (letters)</English>
-			<Russian>Длина названия маркера (Буквы)</Russian>
 		</Key>
 		<Key ID="STR_NoMarkerNames">
 			<English>No marker names</English>
-			<Russian>Маркеры бе названий</Russian>
 		</Key>
 		<Key ID="STR_Unlimited">
 			<English>Unlimited</English>
-			<Russian>неограниченный</Russian>
 		</Key>
 		<Key ID="STR_double">
 			<English>Double</English>
 		</Key>
 		<Key ID="STR_MinDist">
 			<English>Minimum Starting Distance From Objective (Meters)</English>
-			<Russian>Минимальное растояние для старта от задания (Метры)</Russian>
 		</Key>
 		<Key ID="STR_CapRad">
 			<English>Capture Zone Radius (meters)</English>
-			<Russian>Захватить радиус зоны (Метры)</Russian>
 		</Key>
 		<Key ID="STR_AttackerFactionParam">
 			<English>Attacker Faction (requires mod)</English>
@@ -341,15 +300,12 @@
 		</Key>
 		<Key ID="STR_EnableIDF">
 			<English>Enable IDF Mod</English>
-			<Russian>Включить мод IDF</Russian>
 		</Key>
 		<Key ID="STR_EnableHLCAK">
 			<English>Enable HLC AK Mod</English>
-			<Russian>Включить мод HLC AK</Russian>
 		</Key>
 		<Key ID="STR_ModEnabled">
 			<English>Enabled (Disabled if server is missing mod)</English>
-			<Russian>Включен (Выключен если серверу нехватает мода)</Russian>
 		</Key>
 		<Key ID="STR_DefenderGearQuality">
 			<English>Defender Gear Quality</English>
@@ -386,30 +342,24 @@
 		</Key>
 		<Key ID="STR_Rifleman">
 			<English>Rifleman</English>
-			<Russian>стрелок</Russian>
 		</Key>
 		<Key ID="STR_Medic">
 			<English>Medic</English>
-			<Russian>Медик</Russian>
 		</Key>
 		<Key ID="STR_Marksman">
 			<English>Marksman</English>
-			<Russian>Стрелок с оптикой</Russian>
 		</Key>
 		<Key ID="STR_AutomaticRifleman">
 			<English>Automatic Rifleman</English>
-			<Russian>пулеметчик</Russian>
 		</Key>
 		<Key ID="STR_Machinegunner">
 			<English>Machinegunner</English>
 		</Key>
 		<Key ID="STR_Grenadier">
 			<English>Grenadier</English>
-			<Russian>гренадер</Russian>
 		</Key>
 		<Key ID="STR_ATGunner">
 			<English>AT Gunner</English>
-			<Russian>Противотанковый</Russian>
 		</Key>
 		<Key ID="STR_SuppressedRifleman">
 			<English>Rifleman (SD)</English>
@@ -419,11 +369,9 @@
 		</Key>
 		<Key ID="STR_Sniper">
 			<English>Sniper</English>
-			<Russian>снайпер</Russian>
 		</Key>
 		<Key ID="STR_Spotter">
 			<English>Spotter</English>
-			<Russian>наблюдатель</Russian>
 		</Key>
 		<Key ID="STR_UAVOperator">
 			<English>UAV Operator</English>
@@ -433,18 +381,15 @@
 		</Key>
 		<Key ID="STR_Diver">
 			<English>Diver</English>
-			<Russian>Водила</Russian>
 		</Key>
 		<Key ID="STR_SpecOps">
 			<English>SpecOps</English>
-			<Russian>руусская ненджя</Russian>
 		</Key>
 		<Key ID="STR_SpecOpsSMG">
 			<English>SpecOps SMG</English>
 		</Key>
 		<Key ID="STR_RPG">
 			<English>RPG</English>
-			<Russian>РПГ</Russian>
 		</Key>
 		<Key ID="STR_RPG_HE">
 			<English>RPG HE</English>
@@ -460,88 +405,70 @@
 		</Key>
 		<Key ID="STR_Saboteur">
 			<English>Saboteur</English>
-			<Russian>Саботажник</Russian>
 		</Key>
 		<Key ID="STR_SelectedClass">
 			<English>%1 class selected.</English>
-			<Russian>%1 класс выбран</Russian>
 		</Key>
 		<Key ID="STR_WeaponsWillBeGiven">
 			<English>Weapons will be given once round starts.</English>
-			<Russian>Оружие будут выданны с бачалом раунда.</Russian>
 		</Key>
 	</Container>
 	<Container name="Planning">
 		<Key ID="STR_ClickMapForInsertion">
 			<English>Click on map to select a position for %1 insertion.</English>
-			<Russian>Нажмите на карту чтобы выбрать позицию для %1 вторжения.</Russian>
 		</Key>
 		<Key ID="STR_ClickMapObjectivePosition">
 			<English>Click on map to select a good objective position.</English>
-			<Russian>Нажмите на карту чтобы выбрать хорошую позицию для задания.</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle0">
 			<English>MRAP</English>
-			<Russian>Джып</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle1">
 			<English>Boat</English>
-			<Russian>Лодка</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle2">
 			<English>Submarine</English>
 		</Key>
 		<Key ID="STR_InsertionVehicle3">
 			<English>Helicopters</English>
-			<Russian>Маленький верталет</Russian>
 		<Key ID="STR_InsertionVehicle4">
 			<English>Prowler</English>
-			<Russian>Маленький верталет</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle0s">
 			<English>MRAPs</English>
-			<Russian>Джыпы</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle1s">
 			<English>Boats</English>
-			<Russian>Лодки</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle2s">
 			<English>Submarines</English>
 		</Key>
 		<Key ID="STR_InsertionVehicle3s">
 			<English>Helicopters</English>
-			<Russian>Малые верталеты</Russian>
 		</Key>
 		<Key ID="STR_InsertionVehicle4s">
 			<English>Prowler</English>
-			<Russian>Малые верталеты</Russian>
 		</Key>
 		<Key ID="STR_DefaultInsertion">
 			<English>Default (%1)</English>
 		</Key>
 		<Key ID="STR_IfritInsertion">
 			<English>MRAP Insertion</English>
-			<Russian>Вторжение с помощью джыпов</Russian>
 		</Key>
 		<Key ID="STR_BoatInsertion">
 			<English>Boat Insertion</English>
-			<Russian>Вторжение с помощью лодок</Russian>
 		</Key>
 		<Key ID="STR_SubmarineInsertion">
 			<English>Submarine Insertion</English>
 		</Key>
 		<Key ID="STR_OrcaInsertion">
 			<English>Helicopter Insertion</English>
-			<Russian>Вторжение с помощью верталетов</Russian>
 		</Key>
 		<Key ID="STR_ProwlerInsertion">
 			<English>Prowler Insertion</English>
-			<Russian>Вторжение с помощью верталетов</Russian>
 		</Key>
 		<Key ID="STR_SelectObjectivePosition">
 			<English>Select Objective Position</English>
-			<Russian>Выбирите позицию для задания</Russian>
 		</Key>
 		<Key ID="STR_Ready">
 			<English>Ready</English>
@@ -566,19 +493,15 @@
 		</Key>
 		<Key ID="STR_InsertionPositionUpdated">
 			<English>Insertion position updated.</English>
-			<Russian>Позиция вторжения обновленна.</Russian>
 		</Key>
 		<Key ID="STR_InsertingWith">
 			<English>Inserting with %1.</English>
-			<Russian>Вторжение с помощью %1.</Russian>
 		</Key>
 		<Key ID="STR_SelectInsertionMethod">
 			<English>Select insertion method and position using the yellow cinderblocks.</English>
-			<Russian>Выбирите способ вторжения и позицию s pomoщью желтого блока.</Russian>
 		</Key>
 		<Key ID="STR_InvalidPosition">
 			<English>Invalid position! Pick an insertion position outside the red circle.</English>
-			<Russian>Непрабильная позивия ! выбирите позицию для вторжения вне красного круга.</Russian>
 		</Key>
 		<Key ID="STR_InvalidPositionWater">
 			<English>Invalid position! Ifrits must start on land.</English>
@@ -591,7 +514,6 @@
 		</Key>
 		<Key ID="STR_WaitNextRound">
 			<English>Waiting for next round.</English>
-			<Russian>Ожидание следующего раунда</Russian>
 		</Key>
 		<Key ID="STR_PreferDriving">
 			<English>Prefer Driving</English>
@@ -639,23 +561,18 @@
     <Container name="UI">
 		<Key ID="STR_Attacking">
 			<English>Attacking %1%2</English>
-			<Russian>Атака %1%2</Russian>
 		</Key>
 		<Key ID="STR_Capturing">
 			<English>Capturing %1%2</English>
-			<Russian>Захват %1%2</Russian>
 		</Key>
 		<Key ID="STR_Defending">
 			<English>Defending</English>
-			<Russian>Защита</Russian>
 		</Key>
 		<Key ID="STR_Holding">
 			<English>Holding</English>
-			<Russian>Удерживание</Russian>
 		</Key>
 		<Key ID="STR_Waiting">
 			<English>Waiting</English>
-			<Russian>Ожидание</Russian>
 		</Key>
 		<Key ID="STR_Planning">
 			<English>Planning</English>
@@ -667,23 +584,18 @@
 		</Key>
 		<Key ID="STR_StopCapMsg">
 			<English>You are no longer attempting to capture the zone.</English>
-			<Russian>Вы больше не притендуете захватить зону.</Russian>
 		</Key>
 		<Key ID="STR_DefendMsg">
 			<English>You are now attempting to hold. Make sure there isn't an overwhelming number of enemies inside the zone.</English>
-			<Russian>Вы притендуете удерживать. Убидитесь что у врага нет большего количества играков в зоне.</Russian>
 		</Key>
 		<Key ID="STR_StopDefendMsg">
 			<English>"You are no longer attempting to hold the zone.</English>
-			<Russian>Вы более не притендуете на захват зоны.</Russian>
 		</Key>
 		<Key ID="STR_YourTeamWon">
 			<English>Your Team Won!</English>
-			<Russian>Ваша команда выиграла!</Russian>
 		</Key>
 		<Key ID="STR_YourTeamLost">
 			<English>Your Team Lost!</English>
-			<Russian>Ваша команда проиграла!</Russian>
 		</Key>
 		<Key ID="STR_TryWinAgain">
 			<English>Your team won, well done! A new round will start shortly</English>
@@ -693,11 +605,9 @@
 		</Key>
 		<Key ID="STR_EnemyTeamHasBeenEliminated">
 			<English>Enemy team has been eliminated.</English>
-			<Russian>Вражеская команда унечтожена.</Russian>
 		</Key>
 		<Key ID="STR_YourTeamHasBeenEliminated">
 			<English>Your team has been eliminated.</English>
-			<Russian>Ваша команда унечтожена</Russian>
 		</Key>
 		<Key ID="STR_YourTeamRanOutOfTime">
 			<English>Your team ran out of time.</English>
@@ -705,30 +615,24 @@
 		</Key>
 		<Key ID="STR_EnemyTeamRanOutOfTime">
 			<English>Enemy team ran out of time.</English>
-			<Russian>У вражеской комнды кончилось время.</Russian>
 		</Key>
 		<Key ID="STR_YourTeamCapturedTheZone">
 			<English>Your team has captured the zone.</English>
-			<Russian>Ваша команда захватила зону.</Russian>
 		</Key>
 		<Key ID="STR_EnemyTeamCapturedTheZone">
 			<English>Enemy team has captured the zone.</English>
-			<Russian>Вражеская команда захватила зону.</Russian>
 		</Key>
 		<Key ID="STR_CaptureTheZone">
 			<English>Capture The Zone!</English>
-			<Russian>Захватить зону!</Russian>
 		</Key>
 		<Key ID="STR_CaptureTheZoneLong">
 			<English>Enter the zone and capture it before running out of time.</English>
 		</Key>
 		<Key ID="STR_DefendTheZone">
 			<English>Defend The Zone!</English>
-			<Russian>Защитить зону!</Russian>
 		</Key>
 		<Key ID="STR_DefendTheZoneLong">
 			<English>Do not let attackers get inside the zone.</English>
-			<Russian>Не дайте атакующим захватить зону.</Russian>
 		</Key>
 		<Key ID="STR_AFKWarning">
 			<English>You are AFK and will be killed in %1 seconds if you do not move.</English>

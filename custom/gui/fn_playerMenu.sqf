@@ -119,7 +119,7 @@ switch (_mode) do {
 
       case 1: {
         _header ctrlSetText "SELECT YOUR INSERTION METHOD";
-        private _methods = [[localize "STR_IfritInsertion", 0, "O_MRAP_02_F"], [localize "STR_BoatInsertion",1, "B_Boat_Transport_01_F"], [localize "STR_SubmarineInsertion",2, "B_SDV_01_F"], [localize "STR_OrcaInsertion",3, "O_Heli_Light_02_unarmed_F"]];
+        private _methods = [[localize "STR_IfritInsertion", 0, "O_MRAP_02_F"], [localize "STR_BoatInsertion",1, "B_Boat_Transport_01_F"], [localize "STR_SubmarineInsertion",2, "B_SDV_01_F"], [localize "STR_OrcaInsertion",3, "O_Heli_Light_02_unarmed_F"],[localize "STR_ProwlerInsertion",4,"B_LSV_01_unarmed_black_F"]];
 
         {
           _x params ["_name", "_val", "_class"];
@@ -134,7 +134,7 @@ switch (_mode) do {
 
       case 2: {
         _header ctrlSetText "SELECT YOUR PREFERED SCOPE";
-        private _scopes = ["optic_MRCO", "optic_hamr", "optic_Arco_blk_F"];
+        private _scopes = ["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F"];
 
         {
           private _name = getText(configFile >> "CfgWeapons" >> _x >> "displayName");

@@ -1,3 +1,8 @@
+/*
+*		@File: fn_uniformfix.sqf
+*       @Skins for uniform here
+*		@Author: Nuclear
+*/
 while {true} do
 {
 	waitUntil {(uniform player isEqualTo "U_B_CTRG_Soldier_F") || (uniform player isEqualTo "U_I_CombatUniform_shortsleeve")};
