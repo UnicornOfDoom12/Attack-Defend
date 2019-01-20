@@ -13,7 +13,7 @@ publicVariable "minCapTime";
 publicVariable "maxCapTime";
 publicVariable "attackerSide";
 
-minDistFactors = [1, 0.7, 0.55, 1, 1];
+minDistFactors = [1, 0.7, 0.55, 1, 1, 1];
 publicVariable "minDistFactors";
 
 fnc_getSqrDist = DFUNC(getSqrDist);

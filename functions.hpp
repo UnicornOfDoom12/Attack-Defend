@@ -83,6 +83,7 @@ class DTAS_Base {
     class unpauseRoundStart {};
     class SeriousModeEnable {};
     class SeriousModeDisable {};
+    class SeriousModeFunTime {};
     class SeriousModeHandler {};
   };
 

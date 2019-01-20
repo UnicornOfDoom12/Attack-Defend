@@ -119,7 +119,7 @@ switch (_mode) do {
 
       case 1: {
         _header ctrlSetText "SELECT YOUR INSERTION METHOD";
-        private _methods = [[localize "STR_IfritInsertion", 0, "O_MRAP_02_F"], [localize "STR_BoatInsertion",1, "B_Boat_Transport_01_F"], [localize "STR_SubmarineInsertion",2, "B_SDV_01_F"], [localize "STR_OrcaInsertion",3, "O_Heli_Light_02_unarmed_F"],[localize "STR_ProwlerInsertion",4,"B_LSV_01_unarmed_black_F"]];
+        private _methods = [[localize "STR_IfritInsertion", 0, "O_MRAP_02_F"], [localize "STR_BoatInsertion",1, "B_Boat_Transport_01_F"], [localize "STR_SubmarineInsertion",2, "B_SDV_01_F"], [localize "STR_OrcaInsertion",3, "O_Heli_Light_02_unarmed_F"],[localize "STR_ProwlerInsertion",4,"B_LSV_01_unarmed_black_F"],[localize "STR_RandomVehicleInsertion",5,"C_Kart_01_F"]];
 
         {
           _x params ["_name", "_val", "_class"];

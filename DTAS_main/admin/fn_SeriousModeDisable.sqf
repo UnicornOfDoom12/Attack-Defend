@@ -1,3 +1,4 @@
 hint "Serious Mode is OFF";
-SeriousMode = false;
+
+SeriousMode = "Normal";
 publicVariable "SeriousMode";

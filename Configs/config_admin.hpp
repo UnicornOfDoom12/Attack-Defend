@@ -66,8 +66,15 @@ class adminCommands {
   class SeriousModeDisable
   {
   level = 3;
-  displayName = "Enable Serius Mode";
+  displayName = "disable Serius Mode";
   action = "call DTAS_fnc_SeriousModeDisable";
+  condition = "!roundInProgress";
+  };
+  class SeriousModeFunTime
+  {
+  level = 3;
+  displayName = "Fun Time baby";
+  action = "call DTAS_fnc_SeriousModeFunTime";
   condition = "!roundInProgress";
   };
   class SeriousModeHandler
@@ -76,5 +83,5 @@ class adminCommands {
   displayName = "Enable/Disable Serious Mode";
   action = "call DTAS_fnc_SeriousModeHandler";
   condition = "!roundInProgress";
-  }
+  };
 };

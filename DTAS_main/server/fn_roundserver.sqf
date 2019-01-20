@@ -10,7 +10,7 @@ fnc_startPos = DFUNC(startPos);
 
 scoreW = 0;
 publicVariable "scoreW";
-SeriousMode = false; // maybe
+SeriousMode = "Normal"; // maybe
 publicVariable "SeriousMode";
 scoreE = 0;
 publicVariable "scoreE";
@@ -432,57 +432,17 @@ while {true} do
 				_bSpawn = true;
 				_unitsWithoutGroup = _unitsWithoutGroup - _units;
 				_slotCount = 0;
+				_vehType = "B_T_Truck_01_covered_F";
+				systemChat SeriousMode;
 				//Adding an IF statement for serious mode here to improve the whole efficiency of the switch case
-				
-				if (SeriousMode)then
+				switch (_group getVariable ["insertionType", 0]) do
 				{
-					//New switch case for when Serious Mode is ON
-					switch (_group getVariable ["insertionType", 0]) do
-					{
-						// Ifrit , Hunter, Strider
-						case 0:
+					// Ifrit , Hunter, Strider
+					case 0:
 						{
-
-							_vehType = "O_MRAP_02_F";
-							_slotCount = 5;
-						};
-						// Boat
-						case 1:
-						{	
-							_vehType = "B_G_Boat_Transport_02_F";
-							_slotCount = 5;
-						};
-						// Submarine
-						case 2:
-						{
-							_vehType = "B_SDV_01_F";
-							_slotCount = 4;
-							_vehType addItemCargo ["V_RebreatherIR", 3];
-						};
-						// Orca , hummingbird, taru bench
-						case 3:
-						{				
-							_vehType = "O_Heli_Light_02_unarmed_F";
-							_slotCount = 4;
-						};
-						//Prowler
-						case 4:
-						{
-							_vehType = "B_LSV_01_unarmed_black_F";
-							_slotCount = 7;
-						};
-					};
-				}
-				else //new if else inside is the old switch case for Serious mode OFF
-				{
-					switch (_group getVariable ["insertionType", 0]) do
-					{
-						// Ifrit , Hunter, Strider
-						case 0:
-						{
-
 							_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
-							if (SeriousMode) then{
+							if (SeriousMode == "Serious") then{
+								systemChat "SeriousMode is true so you get an ifrit, bitch";
 								_vehType = "O_MRAP_02_F";
 							};
 							_slotCount = _jeepCrewCount;
@@ -491,7 +451,7 @@ while {true} do
 						case 1:
 						{
 							_vehType = selectRandom ["B_Boat_Transport_01_F", "B_Lifeboat", "B_G_Boat_Transport_02_F"];
-							if (SeriousMode) then{
+							if (SeriousMode == "Serious") then{
 								_vehType = "B_G_Boat_Transport_02_F";
 							};
 							_slotCount = 5;
@@ -501,13 +461,13 @@ while {true} do
 						{
 							_vehType = "B_SDV_01_F";
 							_slotCount = 4;
-							_vehType addItemCargo ["V_RebreatherIR", 3];
+							//_vehType addItemCargo ["V_RebreatherIR", 3];
 						};
 						// Orca , hummingbird, taru bench
 						case 3:
 						{
 							_vehType = selectRandom [ "O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
-							if (SeriousMode) then{
+							if (SeriousMode == "Serious") then{
 								_vehType = "O_Heli_Light_02_unarmed_F";
 							};
 							_slotCount = 4;
@@ -518,10 +478,24 @@ while {true} do
 							_vehType = "B_LSV_01_unarmed_black_F";
 							_slotCount = 7;
 						};
+						case 5:
+						{
+							//systemChat "You chose random";
+							_vehType = "B_LSV_01_unarmed_black_F";
+							if (SeriousMode == "NotAtAll") then
+							{
+								//systemChat "Getting a random since serious mode == NotAtALL";
+								hint "You selected a random vehicle, have fun!";
+								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "	B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F"];
+							};
+							if (SeriousMode == "Normal")then {
+								_vehType = selectRandom ["B_LSV_01_unarmed_black_F","O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F","B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
+							};
+							_slotCount = 2;
+						};
 					};
 				};
-			};
-		}
+			}
 		else // Run for all people without group
 		{
 			_units = _unitsWithoutGroup;
@@ -529,7 +503,7 @@ while {true} do
 			_bSpawn = (count _units > 0); // Counts through the array units where the value is more than one
 
 			_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
-			if (SeriousMode) then{
+			if (SeriousMode == "Serious") then{
 				_vehType = "O_MRAP_02_F";
 			};
 			_slotCount = 4;

@@ -434,6 +434,9 @@
 		<Key ID="STR_InsertionVehicle4">
 			<English>Prowler</English>
 		</Key>
+		<Key ID="STR_InsertionVehicle5">
+			<English>Random</English>
+		</Key>
 		<Key ID="STR_InsertionVehicle0s">
 			<English>MRAPs</English>
 		</Key>
@@ -448,6 +451,9 @@
 		</Key>
 		<Key ID="STR_InsertionVehicle4s">
 			<English>Prowler</English>
+		</Key>
+		<Key ID="STR_InsertionVehicle5s">
+			<English>Random</English>
 		</Key>
 		<Key ID="STR_DefaultInsertion">
 			<English>Default (%1)</English>
@@ -466,6 +472,9 @@
 		</Key>
 		<Key ID="STR_ProwlerInsertion">
 			<English>Prowler Insertion</English>
+		</Key>
+		<Key ID="STR_RandomVehicleInsertion">
+			<English>Random Vehcile Insertion</English>
 		</Key>
 		<Key ID="STR_SelectObjectivePosition">
 			<English>Select Objective Position</English>
