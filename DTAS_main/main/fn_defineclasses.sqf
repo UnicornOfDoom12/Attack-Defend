@@ -39,7 +39,7 @@ aClasses = [
 	[
 		["srifle_DMR_03_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
 		[],
-		["hgun_Rook40_F",["16Rnd_9x21_Mag",16]],
+		[],
 		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1], ["optic_Arco_blk_F",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
 		[],
@@ -49,11 +49,23 @@ aClasses = [
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"MK-I EMR"
 	],
-		
+	[
+		["arifle_SPAR_03_blk_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
+		[],
+		[],
+		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
+		[],
+		_helmet,
+		"G_Balaclava_TI_G_blk_F",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Spar 17"
+	],		
 	[
 		["srifle_EBR_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
 		[],
-		["hgun_Rook40_F",["16Rnd_9x21_Mag",16]],
+		[],
 		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
 		[],
@@ -67,7 +79,7 @@ aClasses = [
 	[
 		["arifle_SPAR_02_blk_F","muzzle_snds_M","",_baseScope,["150Rnd_556x45_Drum_Mag_F",150],[],"bipod_01_F_blk"],
 		[],
-		["hgun_Rook40_F",["16Rnd_9x21_Mag",16]],
+		[],
 		["U_I_CombatUniform_shortsleeve",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["150Rnd_556x45_Drum_Mag_F",8,150]]],
 		[],
@@ -81,7 +93,7 @@ aClasses = [
 	[
 		["arifle_MXM_black_F","muzzle_snds_H","",_baseScope,["30Rnd_65x39_caseless_mag",30],[],"bipod_01_F_blk"],
 		[],
-		["hgun_Rook40_F",["16Rnd_9x21_Mag",16]],
+		[],
 		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_mag",15,30]]],
 		[],
@@ -95,7 +107,7 @@ aClasses = [
 	[
 		["arifle_MX_SW_black_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
 		[],
-		["hgun_Rook40_F",["16Rnd_9x21_Mag",16]],
+		[],
 		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_mag",8,100]]],
 		[],
@@ -111,7 +123,7 @@ dClasses = [
 	[
 		["srifle_DMR_03_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
 		[],
-		["hgun_ACPC2_F",["9Rnd_45ACP_Mag",9]],
+		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
 		[],
@@ -121,11 +133,24 @@ dClasses = [
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"MK-I EMR"
 	],
+	[
+		["arifle_SPAR_03_blk_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Spar 17"
+	],
 
 	[
 		["srifle_DMR_06_camo_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
 		[],
-		["hgun_ACPC2_F",["9Rnd_45ACP_Mag",9]],
+		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
 		[],
@@ -139,7 +164,7 @@ dClasses = [
 	[
 		["arifle_CTARS_ghex_F","muzzle_snds_58_ghex_F","",_baseScope,["100Rnd_580x42_Mag_F",100],[],""],
 		[],
-		["hgun_ACPC2_F",["9Rnd_45ACP_Mag",9]],
+		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_580x42_Mag_F",8,100]]],
 		[],
@@ -153,7 +178,7 @@ dClasses = [
 	[
 		["arifle_MXM_black_F","muzzle_snds_H","",_baseScope,["30Rnd_65x39_caseless_mag",30],[],"bipod_01_F_blk"],
 		[],
-		["hgun_ACPC2_F",["9Rnd_45ACP_Mag",9]],
+		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_mag",15,30]]],
 		[],
@@ -167,7 +192,7 @@ dClasses = [
 	[
 		["arifle_MX_SW_black_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
 		[],
-		["hgun_ACPC2_F",["9Rnd_45ACP_Mag",9]],
+		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_mag",8,100]]],
 		[],
