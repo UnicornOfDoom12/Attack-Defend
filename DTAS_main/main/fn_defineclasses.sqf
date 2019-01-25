@@ -21,7 +21,8 @@
 *		To add a new class, simply follow the format and put it in the aClasses for attacker side, or dClasses for defending side
 *		The class will automatically be added
 */
-
+SeriousMode = "Normal";
+publicVariable "SeriousMode";
 private _nvgs = "NVGoggles_OPFOR";
 private _attackerUniform = "U_I_G_Story_Protagonist_F";
 private _defenderUniform = "U_I_C_Soldier_Para_5_F";
