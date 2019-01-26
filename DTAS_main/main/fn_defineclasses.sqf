@@ -34,7 +34,9 @@ private _baseScope = profileNameSpace getVariable ["ADC_PreferredScope", "optic_
 if !(_baseScope in (["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F"])) then {
 	_baseScope = "optic_Arco_blk_F";
 };
-
+//SeriousMode = "Normal";
+systemChat "Defining classes";
+//publicVariable "SeriousMode";
 aClasses = [
 	[
 		["srifle_DMR_03_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
@@ -61,6 +63,19 @@ aClasses = [
 		["Rangefinder","","","",[],[],""],
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"Spar 17"
+	],
+	[
+		["SMG_03_TR_black","","",_baseScope,["50Rnd_570x28_SMG_03",50],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_attackerUniform,[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,50]]],
+		[],
+		_helmet,
+		"G_Balaclava_TI_G_blk_F",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"ADR-97 TR"
 	],		
 	[
 		["srifle_EBR_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
@@ -146,7 +161,19 @@ dClasses = [
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"Spar 17"
 	],
-
+	[
+		["SMG_03_TR_black","","",_baseScope,["50Rnd_570x28_SMG_03",50],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,50]]],
+		[],
+		_helmet,
+		"G_Balaclava_TI_G_blk_F",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"ADR-97 TR"
+	],
 	[
 		["srifle_DMR_06_camo_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
 		[],
@@ -203,3 +230,90 @@ dClasses = [
 		"MX-SW (100Rnd)"
 	]
 ];
+systemChat SeriousMode;
+if (SeriousMode == "NotAtAll") then{
+	systemChat "Rahim added";
+	aClasses append [[
+		["srifle_DMR_01_DMS_BI_F","","",_baseScope,["10Rnd_762x54_Mag",10],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_attackerUniform,[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_762x54_Mag",15,10]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Rahim"
+	],
+	[
+		["srifle_DMR_02_F","","",_baseScope,["10Rnd_338_Mag",10],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_attackerUniform,[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_338_Mag",15,10]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Mar-10"
+	]];
+	dClasses append [[
+		["srifle_DMR_01_DMS_BI_F","","",_baseScope,["10Rnd_762x54_Mag",10],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_762x54_Mag",15,10]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Rahim"
+	],
+	[
+		["srifle_DMR_02_F","","",_baseScope,["10Rnd_338_Mag",10],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_338_Mag",15,10]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Mar-10"
+	]];
+};
+if (SeriousMode != "Serious") then {
+	aClasses append [[
+		["arifle_ARX_blk_F","","",_baseScope,["30Rnd_65x39_caseless_green",30],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_attackerUniform,[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_green",15,30]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"Type 115"
+	]];
+	dClasses append [[
+		["arifle_AKS_F","","",_baseScope,["30Rnd_545x39_Mag_F",30],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_545x39_Mag_F",15,30]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"AKS-74u"
+	]];
+}
+else{
+	systemchat "Rahim removed";
+};
