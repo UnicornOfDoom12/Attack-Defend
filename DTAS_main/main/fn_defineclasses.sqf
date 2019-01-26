@@ -21,7 +21,8 @@
 *		To add a new class, simply follow the format and put it in the aClasses for attacker side, or dClasses for defending side
 *		The class will automatically be added
 */
-
+SeriousMode = "Normal";
+publicVariable "SeriousMode";
 private _nvgs = "NVGoggles_OPFOR";
 private _attackerUniform = "U_I_G_Story_Protagonist_F";
 private _defenderUniform = "U_I_C_Soldier_Para_5_F";
@@ -34,9 +35,13 @@ private _baseScope = profileNameSpace getVariable ["ADC_PreferredScope", "optic_
 if !(_baseScope in (["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F"])) then {
 	_baseScope = "optic_Arco_blk_F";
 };
+<<<<<<< HEAD
 //SeriousMode = "Normal";
 systemChat "Defining classes";
 //publicVariable "SeriousMode";
+=======
+systemChat "Defining classes";
+>>>>>>> 9fd499d474b1065c60057f0fdb8ef33d475620d5
 aClasses = [
 	[
 		["srifle_DMR_03_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
@@ -65,11 +70,19 @@ aClasses = [
 		"Spar 17"
 	],
 	[
+<<<<<<< HEAD
 		["SMG_03_TR_black","","",_baseScope,["50Rnd_570x28_SMG_03",50],[],"bipod_01_F_blk"],
 		[],
 		[],
 		[_attackerUniform,[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,50]]],
+=======
+		["SMG_03_TR_black","","",_baseScope,["50Rnd_570x28_SMG_03",20],[],"bipod_01_F_blk"],
+		[],
+		[],
+		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,20]]],
+>>>>>>> 9fd499d474b1065c60057f0fdb8ef33d475620d5
 		[],
 		_helmet,
 		"G_Balaclava_TI_G_blk_F",
@@ -162,11 +175,19 @@ dClasses = [
 		"Spar 17"
 	],
 	[
+<<<<<<< HEAD
 		["SMG_03_TR_black","","",_baseScope,["50Rnd_570x28_SMG_03",50],[],"bipod_01_F_blk"],
 		[],
 		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,50]]],
+=======
+		["SMG_03_TR_black","","",_baseScope,["50Rnd_570x28_SMG_03",20],[],"bipod_01_F_blk"],
+		[],
+		[],
+		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,20]]],
+>>>>>>> 9fd499d474b1065c60057f0fdb8ef33d475620d5
 		[],
 		_helmet,
 		"G_Balaclava_TI_G_blk_F",
@@ -230,6 +251,7 @@ dClasses = [
 		"MX-SW (100Rnd)"
 	]
 ];
+<<<<<<< HEAD
 systemChat SeriousMode;
 if (SeriousMode == "NotAtAll") then{
 	systemChat "Rahim added";
@@ -265,12 +287,22 @@ if (SeriousMode == "NotAtAll") then{
 		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_762x54_Mag",15,10]]],
+=======
+if (SeriousMode == "NotAtAll") then {
+	aClasses append [[
+		["srifle_DMR_01_DMS_BI_F","","",_baseScope,["10Rnd_762x54_Mag",100],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_762x54_Mag",8,100]]],
+>>>>>>> 9fd499d474b1065c60057f0fdb8ef33d475620d5
 		[],
 		_helmet,
 		"G_Bandanna_beast",
 		["Rangefinder","","","",[],[],""],
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"Rahim"
+<<<<<<< HEAD
 	],
 	[
 		["srifle_DMR_02_F","","",_baseScope,["10Rnd_338_Mag",10],[],"bipod_01_F_blk"],
@@ -306,14 +338,29 @@ if (SeriousMode != "Serious") then {
 		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
 		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_545x39_Mag_F",15,30]]],
+=======
+	]];
+	dClasses append [[
+		["srifle_DMR_01_DMS_BI_F","","",_baseScope,["10Rnd_762x54_Mag",100],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["10Rnd_762x54_Mag",8,100]]],
+>>>>>>> 9fd499d474b1065c60057f0fdb8ef33d475620d5
 		[],
 		_helmet,
 		"G_Bandanna_beast",
 		["Rangefinder","","","",[],[],""],
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+<<<<<<< HEAD
 		"AKS-74u"
 	]];
 }
 else{
 	systemchat "Rahim removed";
 };
+=======
+		"Rahim"
+	]];
+}
+>>>>>>> 9fd499d474b1065c60057f0fdb8ef33d475620d5
