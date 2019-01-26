@@ -3,6 +3,7 @@ fn_SeriousModeDisable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_Se
 fn_SeriousModeFunTime = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeFunTime.sqf";
 fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
 _DoneIfYet = false;
+
 if (SeriousMode == "Serious" && !_DoneIfYet) then
 {
 	call fn_SeriousModeDisable;
