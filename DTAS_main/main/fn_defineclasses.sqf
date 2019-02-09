@@ -30,7 +30,7 @@ private _Dvest = "V_PlateCarrier2_rgr";
 private _helmet = "H_HelmetSpecB_blk";
 private _hat = "H_HelmetSpecB_blk";
 private _baseScope = profileNameSpace getVariable ["ADC_PreferredScope", "optic_Arco_blk_F"];
-fn_GetIndexOfCommand = compile preprocessFileLineNumbers "DTAS_main\server\fn_GetIndexOfCommand";
+fn_GetIndexOfCommand = compile preprocessFileLineNumbers "DTAS_main\server\fn_GetIndexOfCommand.sqf";
 if !(_baseScope in (["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F"])) then {
 	_baseScope = "optic_Arco_blk_F";
 };

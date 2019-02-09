@@ -8,17 +8,26 @@ if (SeriousMode == "Serious" && !_DoneIfYet) then
 {
 	call fn_SeriousModeDisable;
 	_DoneIfYet = true;
+	"Serious" setMarkerAlpha 0;
+	"NotSerious" setMarkerAlpha 1;
+	"FunTime" setMarkerAlpha 0;
 };
 if (SeriousMode == "Normal" && !_DoneIfYet) then
 {
 
 	call fn_SeriousModeFunTime;
 	_DoneIfYet = true;
+	"Serious" setMarkerAlpha 0;
+	"NotSerious" setMarkerAlpha 0;
+	"FunTime" setMarkerAlpha 1;
 };
 if (SeriousMode == "NotAtAll" && !_DoneIfYet) then
 {
 	call fn_SeriousModeEnable;
-	_DoneIfYet = true
+	_DoneIfYet = true;
+	"Serious" setMarkerAlpha 1;
+	"NotSerious" setMarkerAlpha 0;
+	"FunTime" setMarkerAlpha 0;
 
 };
-call fn_defineclasses;
+remoteExec ["fn_defineclasses"];
