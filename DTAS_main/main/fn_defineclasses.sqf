@@ -35,7 +35,6 @@ if !(_baseScope in (["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_
 	_baseScope = "optic_Arco_blk_F";
 };
 //SeriousMode = "Normal";
-systemChat "Defining classes";
 //publicVariable "SeriousMode";
 aClasses = [
 	[
@@ -230,9 +229,9 @@ dClasses = [
 		"MX-SW (100Rnd)"
 	]
 ];
-systemChat SeriousMode;
+
 if (SeriousMode == "NotAtAll") then{
-	systemChat "Rahim added";
+	//systemChat "Rahim added";
 	aClasses append [[
 		["srifle_DMR_01_DMS_BI_F","","",_baseScope,["10Rnd_762x54_Mag",10],[],"bipod_01_F_blk"],
 		[],
@@ -471,6 +470,6 @@ if (SeriousMode != "Serious") then {
 	]];
 }
 else{
-	systemchat "Rahim removed";
+	//systemchat "Rahim removed";
 };
 call fn_GetIndexOfCommand;

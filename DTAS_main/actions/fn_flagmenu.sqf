@@ -3,7 +3,12 @@ private ["_obj"];
 
 waitUntil {!isNil "preInitDone"};
 [] call DFUNC(defineClasses);
-
+fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
+"Defining for everyone I hope" remoteExec ["systemChat"];
+SeriousMode remoteExec ["systemChat"];
+[[], fn_defineclasses] remoteExec ["spawn"];
+call fn_defineclasses;
+remoteExec ["fn_defineclasses"];
 _obj = _this select 0;
 
 _obj allowDamage false;

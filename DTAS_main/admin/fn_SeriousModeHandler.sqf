@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 fn_SeriousModeEnable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeEnable.sqf";
 fn_SeriousModeDisable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeDisable.sqf";
 fn_SeriousModeFunTime = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeFunTime.sqf";
@@ -30,4 +31,7 @@ if (SeriousMode == "NotAtAll" && !_DoneIfYet) then
 	"FunTime" setMarkerAlpha 0;
 
 };
-remoteExec ["fn_defineclasses"];
+publicVariable SeriousMode;
+publicVariable "SeriousMode";
+[[], fn_defineclasses] remoteExec ["spawn"];
+[] call DFUNC(defineClasses);
