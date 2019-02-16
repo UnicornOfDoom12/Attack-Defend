@@ -26,6 +26,7 @@ enableSaving [false, false];
 enableSentences false;
 player enableStamina false;
 [] call DFUNC(defineClasses);
+
 // -- Thread for making sure that
 [] spawn {
 	waitUntil {!isNil "objPos"};
