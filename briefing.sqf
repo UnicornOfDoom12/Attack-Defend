@@ -15,4 +15,5 @@ player createDiaryRecord ["Diary", [localize "STR_Insertion", format ["%1<br/><b
 
 player createDiaryRecord ["Diary", [localize "STR_Mission", format [format ["%1 <marker name='mrkObj'>%2</marker> %3", localize "STR_Mission1", localize "STR_Mission2", localize "STR_Mission3"], timeLimit/60, maxScore, 2*maxScore-1]]];
 
-player createDiaryRecord ["Diary", [localize "STR_Versions", localize "STR_Changelog"]];
+player createDiaryRecord ["Diary", [localize "STR_Versions", localize "STR_Changelog"]];//Planing to add Versions tab where the map and that shit is
+//player createDiaryRecord ["Diary", [localize "STR_Versions",format [format["%1<br/>",localize "STR_Version0.1"]]]
