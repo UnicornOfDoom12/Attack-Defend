@@ -1,12 +1,15 @@
 /*
-*		@File: fn_uniformfix.sqf
-*       @Skins for uniform here
-*		@Author: Nuclear
+@Uniform skining in here
+@by Nuclear
+
+DOESNT WORK YET WiP
 */
-waitUntil {!isNil "currentUniform"};
 while {true} do
 {
-	/*if (playerSide == attackerSide) then
+	waitUntil {(uniform player isEqualTo "U_B_CTRG_Soldier_F") || (uniform player isEqualTo "U_I_CombatUniform_shortsleeve")};
+	sleep 1;
+    //switch this to true if not*/
+    if (playerSide == attackerSide) then
     {
         switch (true) do
         {
@@ -30,9 +33,8 @@ while {true} do
                 player setObjectTextureGlobal [0,"Textures\LobosCTRG.paa"];
             };
         };
-    };*/
-	waitUntil {uniform player != currentUniform && alive player && gearAssigned};
+    };
 
-	removeUniform player;
-	player forceAddUniform currentUniform;
+    waitUntil {(uniform player != "U_B_CTRG_Soldier_F") || (uniform player != "U_I_CombatUniform_shortsleeve")};
+	
 };

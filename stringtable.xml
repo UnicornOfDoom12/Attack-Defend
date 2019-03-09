@@ -118,7 +118,7 @@
 			<English>Capture speed is slowest when attackers only have 1 man inside the zone, and lasts 120 seconds. Capture speed is increased significantly increased as more attackers enter the zone, but is never faster than 20 seconds capture time. Defenders have no notification of capture progress, so defenders must verify that the zone is clear of enemies if they wish to ensure their victory. You must be outside of vehicles and above sea level to capture the zone.</English>
 		</Key>
 		<Key ID="STR_Version0.1">
-			<English>V 0.1 /n -Added shit-tons of new locations to play </English>
+			<English>V 0.1 /n Added shit-tons of new locations to play</English>
 		</Key>
 		<Key ID="STR_Insertion">
 			<English>Insertion</English>
@@ -434,6 +434,9 @@
 		<Key ID="STR_InsertionVehicle4">
 			<English>Prowler</English>
 		</Key>
+		<Key ID="STR_InsertionVehicle5">
+			<English>Random</English>
+		</Key>
 		<Key ID="STR_InsertionVehicle0s">
 			<English>MRAPs</English>
 		</Key>
@@ -448,6 +451,9 @@
 		</Key>
 		<Key ID="STR_InsertionVehicle4s">
 			<English>Prowler</English>
+		</Key>
+		<Key ID="STR_InsertionVehicle5s">
+			<English>Random</English>
 		</Key>
 		<Key ID="STR_DefaultInsertion">
 			<English>Default (%1)</English>
@@ -466,6 +472,9 @@
 		</Key>
 		<Key ID="STR_ProwlerInsertion">
 			<English>Prowler Insertion</English>
+		</Key>
+		<Key ID="STR_RandomVehicleInsertion">
+			<English>Random Vehcile Insertion</English>
 		</Key>
 		<Key ID="STR_SelectObjectivePosition">
 			<English>Select Objective Position</English>
@@ -630,6 +639,9 @@
 		</Key>
 		<Key ID="STR_DefendTheZone">
 			<English>Defend The Zone!</English>
+		</Key>
+		<Key ID = "STR_SeriousModeTog">
+			<English>Toggle the serious mode</English>
 		</Key>
 		<Key ID="STR_DefendTheZoneLong">
 			<English>Do not let attackers get inside the zone.</English>

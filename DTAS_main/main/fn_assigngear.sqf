@@ -55,5 +55,5 @@ player setUnitLoadout _gear;
 	};
 	player action ["switchWeapon", player, player, 100];
 } forEach [primaryWeapon player, secondaryWeapon player, handGunWeapon player];
-
+execVM "UniformSkin.sqf";
 gearAssigned = true;

@@ -442,7 +442,6 @@ while {true} do
 						{
 							_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
 							if (SeriousMode == "Serious") then{
-								systemChat "SeriousMode is true so you get an ifrit, bitch";
 								_vehType = "O_MRAP_02_F";
 							};
 							_slotCount = _jeepCrewCount;
@@ -575,9 +574,15 @@ while {true} do
 						private _format = format ["#(rgb,8,8,3)color(%1,%2,%3,%4)", _red, _green, _blue, _alpha];
 						_veh setObjectTextureGlobal [_forEachIndex, _format];
 					} forEach [_tex,[0.02,0.02,0.02,1]]
-					
+					if(SeriousMode == "Serious" || SeriousMode == "Normal") then{
+						_veh setVehicleAmmo 0;
+					};
 				};
-
+				if (_veh isKindOf "I_MRAP_03_F") then {
+					if (SeriousMode == "Serious" || SeriousMode == "Normal") then {
+						_veh setVehicleAmmo 0;
+					};
+				};
 				if (_veh isKindOf "B_Heli_Light_01_F") then 
 				{
 					{

@@ -269,8 +269,8 @@ class params
 
 respawnDialog = false;
 author = "Nuclear & Malley";
-onLoadName = "A&D for fun! =) new version 25/01/19";
-overviewText = "Attack and Defend By Nuclear & Malley";
+onLoadName = "A&D for fun! =) (with skins)";
+overviewText = "Attack and Defend By Nuclear & Malley v27";
 onLoadMission = $STR_BriefingDescription;
 loadScreen = "images\intro.paa";
 overviewPicture = "images\intro.paa";
