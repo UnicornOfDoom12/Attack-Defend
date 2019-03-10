@@ -573,7 +573,7 @@ while {true} do
 						_x params ["_red", "_green", "_blue", "_alpha"];
 						private _format = format ["#(rgb,8,8,3)color(%1,%2,%3,%4)", _red, _green, _blue, _alpha];
 						_veh setObjectTextureGlobal [_forEachIndex, _format];
-					} forEach [_tex,[0.02,0.02,0.02,1]]
+					} forEach [_tex,[0.02,0.02,0.02,1]];
 					if(SeriousMode == "Serious" || SeriousMode == "Normal") then{
 						_veh setVehicleAmmo 0;
 					};
@@ -587,7 +587,7 @@ while {true} do
 				{
 					{
 						_veh setObjectTextureGlobal [0,"Textures\hummingbird.paa"];	
-					}forEach [_tex,[0.02,0.02,0.02,1]]
+					}forEach [_tex,[0.02,0.02,0.02,1]];
 				};
 			};
 

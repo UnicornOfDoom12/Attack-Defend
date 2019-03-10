@@ -175,10 +175,10 @@ dClasses = [
 		"MX-SW (100Rnd)"
 	]
 ];
-if(SeriousMode == "Normal")then {
+if(SeriousMode == "Normal") then {
 	call fn_definedefaultextras;
-}
-else if (SeriousMode == "NotAtAll") then{
+};
+if (SeriousMode == "NotAtAll") then {
 	call fn_defineNonSeriousModeClasses;
 };
 call fn_GetIndexOfCommand;
