@@ -1,10 +1,89 @@
 #include "script_macros.hpp"
+
 /*
 *   @File: initServer.sqf
 *   @Author: Sig
 *
 *   Description: Server-side player init (when player joins mission)
 */
+"checkForDatabase" addPublicVariableEventHandler
+{
+	private ["_data"];
+	_data = (_this select 1);
+	_clientID = (_data select 0);
+	_UID = (_data select 1);
+	_playerName = (_data select 2);
+	_inidbi = ["new", _UID] call OO_INIDBI;
+	_fileExist = "exists" call _inidbi;
+	_version = "getVersion" call _inidbi;
+	systemChat _version;
+	if (_fileExist) then
+	{
+		systemChat "Welcome back to the server, getting your data now";
+		null = [_UID, _clientID] execVM "getData.sqf";
+	}
+	else
+	{
+		systemChat "Welcome to the server, generating new data for you now";
+		_kills = 0;
+		_deaths = 0;
+		_inidbi = ["new", _UID] call OO_INIDBI;
+		_kdratio = 0;
+		["write", ["Player Information", "Name", _playerName]] call _inidbi;
+		["write", ["Player Information", "UID", _UID]] call _inidbi;
+		["write", ["Player Information", "ClientID", _clientID]] call _inidbi;
+		["write", ["Player Stats", "Kills", _kills]] call _inidbi;
+		["write", ["Player Stats", "Deaths", _deaths]] call _inidbi;
+		["write", ["Player Stats", "kdRatio", _kdratio]] call _inidbi;
+		_s = "Everyone welcome " + _playerName + " Its his first time on the server";
+		_s remoteExec ["systemChat"];
+	};
+};
+"loadDataa" addPublicVariableEventHandler
+{
+	_data = (_this select 1);
+	_UID = (_data select 0);
+	_clientID = (_data select 1);
+	_inidbi = ["new", _UID] call OO_INIDBI;
+	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
+	_deaths = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
+	_ratio = ["read", ["Player Stats", "kdRatio", []]] call _inidbi;
+	if (_deaths >0) then{
+		_ratio = _kills / _deaths;
+	};
+	_killstring = "Kills: " + str (_kills);
+	_deathstring = "Deaths: " + str(_deaths);
+	_ratiostring = "kdRatio: " + str(_ratio);
+	loadData = [_killstring,_deathstring,_ratiostring];
+	_clientID publicVariableClient "loadData";
+
+};
+"AddKill" addPublicVariableEventHandler
+{
+	_UID = (_this select 1);
+	//_UID = getPlayerUID _Killer;
+ 	_inidbi = ["new", _UID] call OO_INIDBI;
+  	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
+  	_deathsOfKiller = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
+  	_kills = _kills + 1;
+  	_kdRatioKiller = 0;
+  	["write", ["Player Stats", "Kills", _kills]] call _inidbi;
+  	if(_deathsOfKiller > 0)then{
+    _kdRatioKiller = _kills / _deathsOfKiller;
+  	};
+  	["write", ["Player Stats", "kdRatio", _kdRatioKiller]] call _inidbi;
+};
+"AddDeath" addPublicVariableEventHandler
+{
+	_UID2 =(_this select 1);
+ 	_inidbi2 = ["new", _UID2] call OO_INIDBI;
+  	_deaths = ["read", ["Player Stats", "Deaths", []]] call _inidbi2;
+  	_deaths = _deaths + 1;
+  	["write", ["Player Stats", "Deaths", _deaths]] call _inidbi2;
+  	_killsOfKilled = ["read", ["Player Stats", "Kills", []]] call _inidbi2;
+  	_kdRatioKilled = _killsOfKilled / _deaths;
+  	["write", ["Player Stats", "kdRatio", _kdRatioKilled]] call _inidbi2;
+};
 
 private _initStart = diag_tickTime;
 diag_log format ["================================ Misson File: %1 ================================", missionName];

@@ -117,6 +117,9 @@
 		<Key ID="STR_CaptureSystem1">
 			<English>Capture speed is slowest when attackers only have 1 man inside the zone, and lasts 120 seconds. Capture speed is increased significantly increased as more attackers enter the zone, but is never faster than 20 seconds capture time. Defenders have no notification of capture progress, so defenders must verify that the zone is clear of enemies if they wish to ensure their victory. You must be outside of vehicles and above sea level to capture the zone.</English>
 		</Key>
+		<Key ID="STR_StatsCall">
+			<English>View your current statistics</English>
+		</Key>
 		<Key ID="STR_Version0.1">
 			<English>V 0.1 /n Added shit-tons of new locations to play</English>
 		</Key>
