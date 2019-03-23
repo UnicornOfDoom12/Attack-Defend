@@ -19,8 +19,8 @@
 	systemChat _version;
 	if (_fileExist) then
 	{
-		systemChat "Welcome back to the server, getting your data now";
-		null = [_UID, _clientID] execVM "getData.sqf";
+			systemChat "Welcome back to the server, getting your data now";
+			null = [_UID, _clientID] execVM "getData.sqf";
 	}
 	else
 	{
@@ -35,6 +35,20 @@
 		["write", ["Player Stats", "Kills", _kills]] call _inidbi;
 		["write", ["Player Stats", "Deaths", _deaths]] call _inidbi;
 		["write", ["Player Stats", "kdRatio", _kdratio]] call _inidbi;
+		["write", ["MK-1", "Kills", _kills]] call _inidbi;
+		["write", ["MX-SW", "Kills", _kills]] call _inidbi;
+		["write", ["MXM", "Kills", _kills]] call _inidbi;
+
+		["write", ["Spar-16s", "Kills", _kills]] call _inidbi;
+
+		["write", ["Car-95-1", "Kills", _kills]] call _inidbi;
+
+		["write", ["MX-SW", "Kills", _kills]] call _inidbi;
+
+		["write", ["MK-18", "Kills", _kills]] call _inidbi;
+
+		["write", ["MK-14", "Kills", _kills]] call _inidbi;
+
 		_s = "Everyone welcome " + _playerName + " Its his first time on the server";
 		_s remoteExec ["systemChat"];
 	};
@@ -60,8 +74,9 @@
 };
 "AddKill" addPublicVariableEventHandler
 {
-	_UID = (_this select 1);
-	//_UID = getPlayerUID _Killer;
+	_data = (_this select 1);
+	_UID = (_data select 0);
+	_weaponName = (_data select 1);
  	_inidbi = ["new", _UID] call OO_INIDBI;
   	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
   	_deathsOfKiller = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
@@ -72,6 +87,42 @@
     _kdRatioKiller = _kills / _deathsOfKiller;
   	};
   	["write", ["Player Stats", "kdRatio", _kdRatioKiller]] call _inidbi;
+	if (_weaponName == "srifle_DMR_03_F" || _weaponName == "srifle_DMR_03_khaki_F") then{
+		_kills = ["read", ["MK-1", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["MK-1", "Kills", _kills]] call _inidbi;
+	};
+	if (_weaponName == "arifle_MX_SW_black_F" || _weaponName == "arifle_MX_SW_F")then{
+		_kills = ["read", ["MX-SW", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["MX_SW", "Kills", _kills]] call _inidbi;
+	};
+	if (_weaponName == "arifle_MXM_F" || _weaponName == "arifle_MXM_black_F")then{
+		_kills = ["read", ["MXM", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["MXM", "Kills", _kills]] call _inidbi;
+	};
+	if (_weaponName == "arifle_SPAR_02_blk_F") then{
+		_kills = ["read", ["Spar-16s", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["Spar-16s", "Kills", _kills]] call _inidbi;
+	};
+	if (_weaponName == "arifle_CTARS_ghex_F") then{
+		_kills = ["read", ["Car-95-1", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["Car-95-1", "Kills", _kills]] call _inidbi;
+	};
+	if (_weaponName == "srifle_DMR_06_camo_F")then{
+		_kills = ["read", ["MK-18", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["MK-18", "Kills", _kills]] call _inidbi;
+	};
+	if (_weaponName == "srifle_EBR_F")then{
+		_kills = ["read", ["MK-14", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["MK-14", "Kills", _kills]] call _inidbi;
+	};
+	
 };
 "AddDeath" addPublicVariableEventHandler
 {

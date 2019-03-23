@@ -179,6 +179,11 @@ switch (_mode) do {
           };
         } forEach _array;
       };
+      case 5: {
+        _header ctrlSetText "Player statistics";
+        _array = ["Kills","Deaths","Ratio"];
+        
+      };
     };
   };
 

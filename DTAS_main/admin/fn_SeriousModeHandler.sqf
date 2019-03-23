@@ -34,11 +34,5 @@ if (SeriousMode == "NotAtAll" && !_DoneIfYet) then
 };
 publicVariable SeriousMode;
 publicVariable "SeriousMode";
-
-_clientID = clientOwner;
-_UID = getPlayerUID player;
-loadDataa = [_UID,_clientID];
-publicVariableServer "loadDataa";
-
 [[], fn_defineclasses] remoteExec ["spawn"];
 [] call DFUNC(defineClasses);
