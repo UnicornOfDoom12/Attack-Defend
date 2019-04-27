@@ -72,7 +72,7 @@ aClasses = [
 		["U_I_CombatUniform_shortsleeve",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["150Rnd_556x45_Drum_Mag_F",8,150]]],
 		[],
-		"H_PASGT_basic_black_F",
+		_helmet,
 		"G_Bandanna_beast",
 		["Rangefinder","","","",[],[],""],
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],

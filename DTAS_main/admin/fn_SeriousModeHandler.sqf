@@ -34,5 +34,4 @@ if (SeriousMode == "NotAtAll" && !_DoneIfYet) then
 };
 publicVariable SeriousMode;
 publicVariable "SeriousMode";
-[[], fn_defineclasses] remoteExec ["spawn"];
-[] call DFUNC(defineClasses);
+
