@@ -442,7 +442,6 @@ while {true} do
 						{
 							_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
 							if (SeriousMode == "Serious") then{
-								systemChat "SeriousMode is true so you get an ifrit, bitch";
 								_vehType = "O_MRAP_02_F";
 							};
 							_slotCount = _jeepCrewCount;
@@ -486,10 +485,10 @@ while {true} do
 							{
 								//systemChat "Getting a random since serious mode == NotAtALL";
 								hint "You selected a random vehicle, have fun!";
-								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "	B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F","I_LT_01_scout_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_LMG_F"];
+								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F","I_LT_01_scout_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_LMG_F"];
 							};
 							if (SeriousMode == "Normal")then {
-								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "	B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F"];
+								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F"];
 							};
 							_slotCount = 2;
 						};
@@ -574,15 +573,21 @@ while {true} do
 						_x params ["_red", "_green", "_blue", "_alpha"];
 						private _format = format ["#(rgb,8,8,3)color(%1,%2,%3,%4)", _red, _green, _blue, _alpha];
 						_veh setObjectTextureGlobal [_forEachIndex, _format];
-					} forEach [_tex,[0.02,0.02,0.02,1]]
-					
+					} forEach [_tex,[0.02,0.02,0.02,1]];
+					if(SeriousMode == "Serious" || SeriousMode == "Normal") then{
+						_veh setVehicleAmmo 0;
+					};
 				};
-
+				if (_veh isKindOf "I_MRAP_03_F") then {
+					if (SeriousMode == "Serious" || SeriousMode == "Normal") then {
+						_veh setVehicleAmmo 0;
+					};
+				};
 				if (_veh isKindOf "B_Heli_Light_01_F") then 
 				{
 					{
 						_veh setObjectTextureGlobal [0,"Textures\hummingbird.paa"];	
-					}forEach [_tex,[0.02,0.02,0.02,1]]
+					}forEach [_tex,[0.02,0.02,0.02,1]];
 				};
 			};
 

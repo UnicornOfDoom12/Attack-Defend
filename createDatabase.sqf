@@ -1,0 +1,15 @@
+systemChat "Welcome to the server, creating a data entry for you now";
+_clientID = (_this select 0);
+_UID = (_this select 1);
+_playerName = (_this select 2);
+_kills = (_this select 3);
+_deaths = (_this select 4);
+_inidbi = ["new", _UID] call OO_INIDBI;
+_kdratio = 0;
+["write", ["Player Information", "Name", _playerName]] call _inidbi;
+["write", ["Player Information", "UID", _UID]] call _inidbi;
+["write", ["Player Information", "ClientID", _clientID]] call _inidbi;
+["write", ["Player Stats", "Kills", _kills]] call _inidbi;
+["write", ["Player Stats", "Deaths", _deaths]] call _inidbi;
+["write", ["Player Stats", "kdRatio", _kdratio]] call _inidbi;
+"Welcome to the server new person" remoteExec ["systemChat"];

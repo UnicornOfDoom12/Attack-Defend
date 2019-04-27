@@ -6,8 +6,6 @@
 *		Description: Fired when the player selects a new class
 */
 fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
-"Defining for everyone I hope" remoteExec ["systemChat"];
-SeriousMode remoteExec ["systemChat"];
 [[], fn_defineclasses] remoteExec ["spawn"];
 call fn_defineclasses;
 remoteExec ["fn_defineclasses"];

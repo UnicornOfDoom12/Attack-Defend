@@ -3,6 +3,7 @@ fn_SeriousModeEnable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_Ser
 fn_SeriousModeDisable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeDisable.sqf";
 fn_SeriousModeFunTime = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeFunTime.sqf";
 fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
+fn_getdata = compile preprocessFileLineNumbers "getData.sqf";
 _DoneIfYet = false;
 
 if (SeriousMode == "Serious" && !_DoneIfYet) then

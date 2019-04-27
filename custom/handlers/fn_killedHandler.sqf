@@ -24,4 +24,13 @@ params [
 
 if (!(side _killer isEqualTo side _unit) && isPlayer _killer && isPlayer _unit) then {
   [[_unit], {playSound "onKillSound"; hint format ["You killed %1", name (_this select 0)]}] remoteExec ["bis_fnc_call", _killer];
+  clientID = clientOwner;
+  _killerID = getPlayerUID _Killer;
+  AddKill = _killerID;
+  publicVariableServer "AddKill";
+
+  _killedID = getPlayerUID player;
+  AddDeath = _killedID;
+  publicVariableServer "AddDeath";
+
 };
