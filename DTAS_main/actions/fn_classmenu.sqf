@@ -16,6 +16,9 @@ params [
 
 _veh allowDammage false;
 
+fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
+remoteExec ["fn_defineclasses"];
+
 waituntil {!isNil "aClasses"};
 waitUntil {!isNil "dClasses"};
 

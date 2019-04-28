@@ -6,6 +6,8 @@ fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_definecl
 fn_getdata = compile preprocessFileLineNumbers "getData.sqf";
 _DoneIfYet = false;
 
+remoteExec ["fn_defineclasses"];
+
 if (SeriousMode == "Serious" && !_DoneIfYet) then
 {
 	call fn_SeriousModeDisable;

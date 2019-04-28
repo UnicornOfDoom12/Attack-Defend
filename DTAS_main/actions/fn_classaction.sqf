@@ -11,6 +11,9 @@ remoteExec ["fn_defineclasses"];
 	["_side", WEST, [WEST]]
 ];
 
+fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
+remoteExec ["fn_defineclasses"];
+
 if (_side isEqualTo WEST) then
 {
 	currentAClass = _class;
