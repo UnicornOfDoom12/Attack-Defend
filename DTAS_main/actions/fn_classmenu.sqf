@@ -13,11 +13,11 @@
 params [
 	["_veh", objNull, [objNull]]
 ];
-
-_veh allowDammage false;
-
 fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
+[[], fn_defineclasses] remoteExec ["spawn"];
+call fn_defineclasses;
 remoteExec ["fn_defineclasses"];
+_veh allowDammage false;
 
 waituntil {!isNil "aClasses"};
 waitUntil {!isNil "dClasses"};

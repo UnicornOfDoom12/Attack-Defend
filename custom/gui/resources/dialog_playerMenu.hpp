@@ -79,6 +79,7 @@ class ADC_playerMenuMain {
     	w = 0.185671 * safezoneW;
     	h = 0.022 * safezoneH;
       font = P_FONT;
+      onMouseButtonClick = "['comboUpdate'] call ADC_fnc_playerMenu";
       onLbSelChanged = "['comboUpdate'] call ADC_fnc_playerMenu";
       onLoad = "(_this select 0) ctrlSetFade 1; (_this select 0) ctrlCommit 0";
     };

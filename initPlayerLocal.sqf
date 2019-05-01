@@ -15,7 +15,11 @@ private _initStart = diag_tickTime;
 diag_log format ["================================ Misson File: %1 ================================", missionName];
 diag_log         "                               Initializing Player                               ";
 diag_log         "=================================================================================";
-
+_clientID = clientOwner;
+_UID = getPlayerUID player;
+_name = name player;
+checkForDatabase = [_clientID, _UID, _name];
+publicVariableServer "checkForDatabase";
 
 params [
 	["_unit", player, [objNull]],

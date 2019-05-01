@@ -5,14 +5,14 @@
 *
 *		Description: Fired when the player selects a new class
 */
+fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
+[[], fn_defineclasses] remoteExec ["spawn"];
+call fn_defineclasses;
 remoteExec ["fn_defineclasses"];
 (_this select 3) params [
 	["_class", [], [[]]],
 	["_side", WEST, [WEST]]
 ];
-
-fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
-remoteExec ["fn_defineclasses"];
 
 if (_side isEqualTo WEST) then
 {

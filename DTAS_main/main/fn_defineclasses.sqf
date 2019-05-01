@@ -72,7 +72,7 @@ aClasses = [
 		["U_I_CombatUniform_shortsleeve",[["FirstAidKit",5]]],
 		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["150Rnd_556x45_Drum_Mag_F",8,150]]],
 		[],
-		_helmet,
+		"H_PASGT_basic_black_F",
 		"G_Bandanna_beast",
 		["Rangefinder","","","",[],[],""],
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
@@ -93,11 +93,11 @@ aClasses = [
 	],
 
 	[
-		["arifle_MX_SW_black_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
+		["arifle_MX_SW_black_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_black_mag",100],[],"bipod_01_F_blk"],
 		[],
 		[],
 		["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
-		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_mag",8,100]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_black_mag",8,100]]],
 		[],
 		_helmet,
 		"G_Balaclava_TI_G_blk_F",
@@ -162,11 +162,11 @@ dClasses = [
 	],
 
 	[
-		["arifle_MX_SW_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
+		["arifle_MX_SW_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_black_mag",100],[],"bipod_01_F_blk"],
 		[],
 		[],
 		[_defenderUniform,[["FirstAidKit",5]]],
-		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_mag",8,100]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_black_mag",8,100]]],
 		[],
 		_helmet,
 		"G_Bandanna_beast",
@@ -180,5 +180,66 @@ if(SeriousMode == "Normal") then {
 };
 if (SeriousMode == "NotAtAll") then {
 	call fn_defineNonSeriousModeClasses;
+};
+_UID = getPlayerUID player;
+_clientID = clientOwner;
+LoadDataForChallenges = [_UID,_clientID];
+publicVariableServer "LoadDataForChallenges";
+_data = StatsForChallenge;
+if ((_data select 3) >= 25)then{ // 25 mk 1 kills
+aClasses append [[
+	["srifle_DMR_03_tan_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
+	[],
+	[],
+	["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1], ["optic_Arco_blk_F",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
+	[],
+	_helmet,
+	"G_Balaclava_TI_G_blk_F",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"MK-I EMR (Sand)"
+]];
+dClasses append [[
+	["srifle_DMR_03_tan_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],
+	[],
+	[],
+	["U_B_CTRG_Soldier_F",[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1], ["optic_Arco_blk_F",1],[_nvgs,1],["20Rnd_762x51_Mag",15,20]]],
+	[],
+	_helmet,
+	"G_Balaclava_TI_G_blk_F",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"MK-I EMR (Sand)"
+]];
+};
+if ((_data select 4) >= 25)then{ // 25 MXSW kills
+aClasses append [[
+		["arifle_MX_SW_khk_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_attackerUniform,[["FirstAidKit",5]]],
+		[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_mag",8,100]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"MX-SW (100Rnd) (Green)"
+	]];
+dClasses append [	[
+		["arifle_MX_SW_khk_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
+		[],
+		[],
+		[_defenderUniform,[["FirstAidKit",5]]],
+		[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["100Rnd_65x39_caseless_mag",8,100]]],
+		[],
+		_helmet,
+		"G_Bandanna_beast",
+		["Rangefinder","","","",[],[],""],
+		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+		"MX-SW (100Rnd) (Green)"
+	]];
 };
 call fn_GetIndexOfCommand;

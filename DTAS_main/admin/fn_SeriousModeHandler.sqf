@@ -6,8 +6,6 @@ fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_definecl
 fn_getdata = compile preprocessFileLineNumbers "getData.sqf";
 _DoneIfYet = false;
 
-remoteExec ["fn_defineclasses"];
-
 if (SeriousMode == "Serious" && !_DoneIfYet) then
 {
 	call fn_SeriousModeDisable;
@@ -36,4 +34,10 @@ if (SeriousMode == "NotAtAll" && !_DoneIfYet) then
 };
 publicVariable SeriousMode;
 publicVariable "SeriousMode";
-
+[[], fn_defineclasses] remoteExec ["spawn"];
+[] call DFUNC(defineClasses);
+/*
+_uid = getPlayerUID player;
+_weapon = selectRandom ["srifle_EBR_F","srifle_DMR_03_F","srifle_DMR_06_camo_F","arifle_CTARS_ghex_F","arifle_SPAR_02_blk_F","arifle_MXM_F","arifle_MX_SW_black_F"];
+Addkill = [_uid,_weapon];
+publicVariableServer "AddKill";*/

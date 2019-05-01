@@ -81,7 +81,8 @@ switch (_mode) do {
     if ([] call FUNC(adminLevel) > 0) then {
       _arr pushBack ["Admin Commands", 4];
     };
-
+    _arr pushBack ["Player Statistics",5];
+    _arr pushBack ["Challenges",6];
     {
       _combo lbAdd (_x select 0);
       _combo lbSetValue [(lbSize _combo) - 1, (_x select 1)];
@@ -135,7 +136,38 @@ switch (_mode) do {
       case 2: {
         _header ctrlSetText "SELECT YOUR PREFERED SCOPE";
         private _scopes = ["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F"];
-
+        _UID = getPlayerUID player;
+        _clientID = clientOwner;
+        LoadDataForChallenges = [_UID,_clientID];
+        publicVariableServer "LoadDataForChallenges";
+        _data = StatsForChallenge;
+        if ((_data select 0) >= 10)then{ // 10 kills
+          _scopes append ["optic_Aco"];
+        };
+        if ((_data select 0) >= 25)then{ // 25 kills
+          _scopes append ["optic_ACO_grn"];
+        };
+        if ((_data select 5) >= 25)then{ // mxm
+          _scopes append ["optic_Arco_blk_F"];
+        };
+        if ((_data select 6) >= 25)then{ // spar 16
+          _scopes append ["optic_Aco_smg"];
+        };
+        if ((_data select 7) >= 25)then{ // car 95
+          _scopes append ["optic_ACO_grn_smg"];
+        };
+        if ((_data select 8) >= 25)then{ // MK18
+          _scopes append ["optic_Holosight_smg"];
+        };
+        if ((_data select 9) >= 25)then{ // MK14
+          _scopes append ["optic_Holosight"];
+        };
+        if ((_data select 0) >= 50)then{ // 50 kills
+          _scopes append ["optic_Arco_ghex_F"];
+        };
+        if ((_data select 0) >= 100)then{ // 100 kills
+          _scopes append ["optic_DMS"];
+        };           
         {
           private _name = getText(configFile >> "CfgWeapons" >> _x >> "displayName");
           private _pic = getText(configFile >> "CfgWeapons" >> _x >> "picture");
@@ -181,8 +213,67 @@ switch (_mode) do {
       };
       case 5: {
         _header ctrlSetText "Player statistics";
-        _array = ["Kills","Deaths","Ratio"];
+        _UID = getPlayerUID player;
+        _clientID = clientOwner;
+        loadDataForPlayerMenu = [_UID,_clientID];
+        publicVariableServer "loadDataForPlayerMenu";
+        _name = name player;
+        _name = "Statistics for " + _name;
+        _list lbAdd _name;
+        _array = StatsArray;
+        {
+          private _displayName = _array select _forEachIndex;
+          _list lbAdd _displayName;
+
+        } forEach _array;
         
+      };
+      case 6: {
+        _header ctrlSetText "Challenges";
+        _array = ["Get 25 kills with a Mk-1","Get 25 kills with a SW","Get 25 kills with a MXM","Get 25 Kills with a Spar-16s", "Get 25 kills with a Car-95-1", "Get 25 kills with a MK-18", "Get 25 kills with a MK-14", "Get over 10 kills", "Get over 25 kills", "Get over 50 kills", "Get over 100 kills"];
+        _UID = getPlayerUID player;
+        _clientID = clientOwner;
+        LoadDataForChallenges = [_UID,_clientID];
+        publicVariableServer "LoadDataForChallenges";
+        _data = StatsForChallenge;
+        {
+          _displayName = _array select _forEachIndex;
+          if (_forEachIndex == 0 && (_data select 3) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 1 && (_data select 4) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 2 && (_data select 5) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 3 && (_data select 6) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 4 && (_data select 7) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 5 && (_data select 8) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 6 && (_data select 9) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 7 && (_data select 0) >= 10) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 8 && (_data select 0) >= 25) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 9 && (_data select 0) >= 50) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          if (_forEachIndex == 10 && (_data select 0) >= 100) then {
+            _displayName = _displayName + " [Completed]";
+          };
+          _list lbAdd _displayName;
+
+        } forEach _array;
       };
     };
   };

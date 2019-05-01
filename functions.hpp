@@ -45,7 +45,6 @@ class DTAS_Base {
     class classAction {};
     class classMenu {};
     class flagMenu {};
-    class flagMenuAdmin {};
     class pickSpawnAction {};
     class readyAction {};
     class unStuck {};
