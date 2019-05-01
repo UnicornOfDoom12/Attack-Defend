@@ -561,7 +561,6 @@ while {true} do
 				{
 					{
 						_veh setObjectTextureGlobal [0,"Textures\PHTS_Hunter.paa"];
-						_veh setObjectTextureGlobal [1,"Textures\PHTS_Hunter.paa"];
 					}forEach [_tex,[0.02,0.02,0.02,1]]
 				};
 				if (_veh isKindOf "O_MRAP_02_F") then 
