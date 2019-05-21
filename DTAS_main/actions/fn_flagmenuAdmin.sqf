@@ -64,13 +64,13 @@ fnc_isAdmin =
 
 _UID = getPlayerUID player;
 _clientID = clientOwner;
-/*
-_obj addAction [format ["<t color='#2080ff'>%1</t>", localize "STR_ResumeSpectating"], {[] call DFUNC(nextSpectateUnit)}, [""], 15, false, true, "",  "roundInProgress && (!isPlaying) && (!(player getVariable ['isPlaying', false]))"];
 
+_obj addAction [format ["<t color='#2080ff'>%1</t>", localize "STR_ResumeSpectating"], {[] call DFUNC(nextSpectateUnit)}, [""], 15, false, true, "",  "roundInProgress && (!isPlaying) && (!(player getVariable ['isPlaying', false]))"];
+/*
 _obj addAction [format ["<t color='#32cd32'>%1</t>", localize "STR_Ready"], {_this call DFUNC(readyAction)}, [], 5, false, true, "", "(!roundInProgress) && ((playerSide != attackerSide) || ((group player) getVariable ['insertionPosPicked', false])) && (!((group player) getVariable ['groupReady', false])) && ([player] call fnc_isLeaderWithGroup)"];
 _obj addAction ["View your statistics", {call fn_getdata}];
 */
-//_obj addAction [format ["<t color='#ffc000'>%1</t>", localize "STR_GroupManagementMenu"], "groups\refresh.sqf", [], 0, false, false, "", "true"];
+_obj addAction [format ["<t color='#ffc000'>%1</t>", localize "STR_GroupManagementMenu"], "groups\refresh.sqf", [], 0, false, false, "", "true"];
 
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ForceRoundStart"], {_this call DFUNC(forceRoundStart)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 2) && !roundInProgress"];
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_PauseRoundStart"], {_this call DFUNC(pauseRoundStart)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 1) && !adminPaused"];
