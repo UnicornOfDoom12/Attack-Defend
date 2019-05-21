@@ -360,8 +360,8 @@ while {true} do
 
 	_toDelete = nearestObjects [markerPos "mrkObj1", _deleteTypes, 10000];
 	_toDelete = _toDelete + ((markerPos "mrkObj1") nearObjects ["Default", 10000]); // fix for bug with detecting satchels
-	_toDelete = _toDelete + nearestObjects [getPos westMenuFlag, _deleteTypes, 100];
-	_toDelete = _toDelete + nearestObjects [getPos eastMenuFlag, _deleteTypes, 100];
+	_toDelete = _toDelete + nearestObjects [getPos WestMenu, _deleteTypes, 100];
+	_toDelete = _toDelete + nearestObjects [getPos EastMenu, _deleteTypes, 100];
 	for "_i" from 0 to ((count _toDelete) - 1) do
 	{
 		deleteVehicle (_toDelete select _i);
