@@ -228,7 +228,8 @@ aClasses append [[
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"MX-SW (100Rnd) (Green)"
 	]];
-dClasses append [	[
+dClasses append [
+		[
 		["arifle_MX_SW_khk_F","muzzle_snds_H","",_baseScope,["100Rnd_65x39_caseless_mag",100],[],"bipod_01_F_blk"],
 		[],
 		[],
@@ -240,6 +241,7 @@ dClasses append [	[
 		["Rangefinder","","","",[],[],""],
 		["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 		"MX-SW (100Rnd) (Green)"
-	]];
+	]
+	];
 };
 call fn_GetIndexOfCommand;
