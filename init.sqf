@@ -17,7 +17,7 @@
 	systemChat _ratiostring;	
 };
 
-
+[] execVM "welcome.sqf";
 
 
 

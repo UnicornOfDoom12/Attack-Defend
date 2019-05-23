@@ -80,4 +80,3 @@ diag_log 				 "=========================== Player Initialization Completed =====
 diag_log format ["========================== Time: The initialization took %1 =====================", [_execTime, "MM:SS.MS"] call BIS_fnc_secondsToString];
 diag_log format	["=================================  Mission: %1 ===============================", missionName];
 [] execVM "popup.sqf";
-[] execVM "welcome.sqf";
