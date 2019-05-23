@@ -17,8 +17,7 @@
 	systemChat _ratiostring;	
 };
 
-[] execVM "custom\welcome.sqf";
-[] execVM "custom\popup.sqf";
+
 
 
 
