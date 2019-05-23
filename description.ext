@@ -269,8 +269,8 @@ class params
 
 respawnDialog = false;
 author = "Nuclear & Malley";
-onLoadName = "A&D PHTS V00.01";
-overviewText = "Attack and Defend By Nuclear & Malley V 00.01";
+onLoadName = "A&D PHTS V 00.02";
+overviewText = "Attack and Defend By Nuclear & Malley V 00.02";
 onLoadMission = $STR_BriefingDescription;
 loadScreen = "images\intro.paa";
 overviewPicture = "images\intro.paa";
