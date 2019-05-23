@@ -7,7 +7,7 @@
 disabledAI = 1;
 respawn = 3;
 respawndelay = 1;
-disableChannels[] = {{0,false,true}, {1,false,true}, {2,true,true}, {3,false,false}, {4,false,false}, {5,false,false}, {6,true,true}};
+disableChannels[] = {{0,true,false}, {1,false,true}, {2,true,true}, {3,false,false}, {4,false,false}, {5,false,false}, {6,true,true}};
 enableDebugConsole = 1;
 
 class CfgFunctions 
@@ -269,8 +269,8 @@ class params
 
 respawnDialog = false;
 author = "Nuclear & Malley";
-onLoadName = "A&D for fun! =) (With database)";
-overviewText = "Attack and Defend By Nuclear & Malley v39";
+onLoadName = "A&D PHTS V00.01";
+overviewText = "Attack and Defend By Nuclear & Malley V 00.01";
 onLoadMission = $STR_BriefingDescription;
 loadScreen = "images\intro.paa";
 overviewPicture = "images\intro.paa";
