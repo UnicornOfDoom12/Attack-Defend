@@ -1,7 +1,7 @@
 //
 
 sleep 5;
-format["Test"] hintC
+format["Presidental Hire Taxi Services"] hintC
 [
 	"Welcome to the A&D Server of PHTS",
 	"Have Fun and play fair.",
