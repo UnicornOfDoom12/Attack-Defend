@@ -18,8 +18,7 @@ diag_log         "==============================================================
 _clientID = clientOwner;
 _UID = getPlayerUID player;
 _name = name player;
-checkForDatabase = [_clientID, _UID, _name];
-publicVariableServer "checkForDatabase";
+
 
 params [
 	["_unit", player, [objNull]],
@@ -30,6 +29,9 @@ enableSaving [false, false];
 enableSentences false;
 player enableStamina false;
 [] call DFUNC(defineClasses);
+
+checkForDatabase = [_clientID, _UID, _name];
+publicVariableServer "checkForDatabase";
 // -- Thread for making sure that
 [] spawn {
 	waitUntil {!isNil "objPos"};

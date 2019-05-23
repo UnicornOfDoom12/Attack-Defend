@@ -88,11 +88,11 @@ fnc_reveal =
 	{(group player) reveal _x;} forEach ((getPos player) nearObjects ["B_SupplyCrate_F", 50]);
 	if (playerSide == WEST) then
 	{
-		(group player) reveal westMenuFlag;
+		(group player) reveal WestMenu;
 	}
 	else
 	{
-		(group player) reveal eastMenuFlag;
+		(group player) reveal EastMenu;
 	};
 };
 
