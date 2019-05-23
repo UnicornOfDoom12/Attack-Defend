@@ -18,6 +18,7 @@
 };
 
 [] execVM "welcome.sqf";
+[] execVM "popup.sqf";
 
 
 
