@@ -181,11 +181,15 @@ if(SeriousMode == "Normal") then {
 if (SeriousMode == "NotAtAll") then {
 	call fn_defineNonSeriousModeClasses;
 };
+
 _UID = getPlayerUID player;
 _clientID = clientOwner;
+
 LoadDataForChallenges = [_UID,_clientID];
 publicVariableServer "LoadDataForChallenges";
 _data = StatsForChallenge;
+
+
 if ((_data select 3) >= 25)then{ // 25 mk 1 kills
 aClasses append [[
 	["srifle_DMR_03_tan_F","","",_baseScope,["20Rnd_762x51_Mag",20],[],"bipod_01_F_blk"],

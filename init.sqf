@@ -5,6 +5,12 @@
 //publicVariableServer "checkForDatabase";
 //_v = "Inside the INIT.sqf for " + _name;
 //_v remoteExec ["systemChat"];
+
+
+[] execVM "welcome.sqf";
+[] execVM "popup.sqf";
+
+
 "loadData" addPublicVariableEventHandler
 {
 	_array = (_this select 1);
@@ -16,10 +22,4 @@
 	systemChat _deathstring;
 	systemChat _ratiostring;	
 };
-
-[] execVM "welcome.sqf";
-[] execVM "popup.sqf";
-
-
-
 

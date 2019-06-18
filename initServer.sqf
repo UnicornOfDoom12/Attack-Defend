@@ -6,6 +6,33 @@
 *
 *   Description: Server-side player init (when player joins mission)
 */
+
+
+private _initStart = diag_tickTime;
+diag_log format ["================================ Misson File: %1 ================================", missionName];
+diag_log         "                               Initializing Server                               ";
+diag_log         "=================================================================================";
+
+waitUntil {!isNil "preInitDone"};
+call compile preprocessFileLineNumbers "serverStartConfiguration.sqf";
+
+
+[] spawn DFUNC(srvWarningInit);
+[] spawn DFUNC(capture);
+[] spawn DFUNC(roundServer);
+[] spawn DFUNC(endHandler);
+[] spawn DFUNC(weather);
+
+
+addMissionEventHandler ["HandleDisconnect", { _this spawn FUNC(handleDisconnect) }];
+
+["Initialize"] call BIS_fnc_dynamicGroups;
+
+private _execTime = diag_tickTime - _initStart;
+diag_log         "=================================================================================";
+diag_log 				 "=========================== Server Initialization Completed =====================";
+diag_log format ["========================== Time: The initialization took %1 =====================", [_execTime, "MM:SS.MS"] call BIS_fnc_secondsToString];
+diag_log format	["=================================  Mission: %1 ===============================", missionName];
 "checkForDatabase" addPublicVariableEventHandler
 {
 	private ["_data"];
@@ -35,7 +62,6 @@
 		//_v remoteExec ["systemChat"];
 		["write", ["Player Information", "Name", _playerName]] call _inidbi;
 		["write", ["Player Information", "UID", _UID]] call _inidbi;
-		["write", ["Player Information", "ClientID", _clientID]] call _inidbi;
 		["write", ["Player Stats", "Kills", _kills]] call _inidbi;
 		["write", ["Player Stats", "Deaths", _deaths]] call _inidbi;
 		["write", ["Player Stats", "kdRatio", _kdratio]] call _inidbi;
@@ -107,6 +133,7 @@
 };
 "LoadDataForChallenges" addPublicVariableEventHandler
 {
+
 	_data = (_this select 1);
 	_UID =(_data select 0);
 	_clientID = (_data select 1);
@@ -122,8 +149,7 @@
 	_MK18 = ["read", ["MK-18", "Kills", []]] call _inidbi;
 	_MK14 = ["read", ["MK-14", "Kills", []]] call _inidbi;
 	StatsForChallenge = [_kills,_deaths,_ratio,_Mk1,_MXSW,_MXM,_Spar16,_car95,_MK18,_MK14];
-	publicVariable "StatsForChallenge"
-
+	_clientID publicVariableClient "StatsForChallenge";
 };
 "AddKill" addPublicVariableEventHandler
 {
@@ -188,29 +214,3 @@
   	_kdRatioKilled = _killsOfKilled / _deaths;
   	["write", ["Player Stats", "kdRatio", _kdRatioKilled]] call _inidbi2;
 };
-
-private _initStart = diag_tickTime;
-diag_log format ["================================ Misson File: %1 ================================", missionName];
-diag_log         "                               Initializing Server                               ";
-diag_log         "=================================================================================";
-
-waitUntil {!isNil "preInitDone"};
-call compile preprocessFileLineNumbers "serverStartConfiguration.sqf";
-
-
-[] spawn DFUNC(srvWarningInit);
-[] spawn DFUNC(capture);
-[] spawn DFUNC(roundServer);
-[] spawn DFUNC(endHandler);
-[] spawn DFUNC(weather);
-
-
-addMissionEventHandler ["HandleDisconnect", { _this spawn FUNC(handleDisconnect) }];
-
-["Initialize"] call BIS_fnc_dynamicGroups;
-
-private _execTime = diag_tickTime - _initStart;
-diag_log         "=================================================================================";
-diag_log 				 "=========================== Server Initialization Completed =====================";
-diag_log format ["========================== Time: The initialization took %1 =====================", [_execTime, "MM:SS.MS"] call BIS_fnc_secondsToString];
-diag_log format	["=================================  Mission: %1 ===============================", missionName];
