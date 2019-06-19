@@ -35,7 +35,7 @@ ADC_VoteList = [];
 publicVariable "ADC_VoteList";
 lastObjPosMarker = "";
 publicVariable "lastObjPosMarker";
-
+_Options = DefaultOptions;
 adminPaused = false;
 if (DefaultAdminPaused > 0) then
 {
@@ -440,10 +440,17 @@ while {true} do
 					// Ifrit , Hunter, Strider
 					case 0:
 						{
-							_vehType = selectRandom ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F"];
-							if (SeriousMode == "Serious") then{
-								_vehType = "O_MRAP_02_F";
+							_MRAPS = [];
+							if (_Options select 8)then{
+								_MRAPS append ["O_MRAP_02_F"];
 							};
+							if (_Options select 9)then{
+								_MRAPS append ["B_MRAP_01_F"];
+							};
+							if (_Options select 10)then{
+								_MRAPS append ["I_MRAP_03_F"];
+							};
+							_vehType = selectRandom _MRAPS;
 							_slotCount = _jeepCrewCount;
 						};
 						// Boat
@@ -465,11 +472,12 @@ while {true} do
 						// Orca , hummingbird, taru bench
 						case 3:
 						{
-							_vehType = selectRandom [ "O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
-							if (SeriousMode == "Serious") then{
-								_vehType = "O_Heli_Light_02_unarmed_F";
+							
+							if (_Options select 13)then{
+								_vehType = selectRandom ["O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_black_F","B_Heli_Light_01_F"];
+								_slotCount = 4;
 							};
-							_slotCount = 4;
+							
 						};
 						//Prowler
 						case 4:
@@ -481,16 +489,14 @@ while {true} do
 						{
 							//systemChat "You chose random";
 							_vehType = "B_LSV_01_unarmed_black_F";
-							if (SeriousMode == "NotAtAll") then
+							if (_Options select 11) then
 							{
 								//systemChat "Getting a random since serious mode == NotAtALL";
 								hint "You selected a random vehicle, have fun!";
 								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F","I_LT_01_scout_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_LMG_F"];
+								_slotCount = 2;
 							};
-							if (SeriousMode == "Normal")then {
-								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F"];
-							};
-							_slotCount = 2;
+							
 						};
 					};
 				};

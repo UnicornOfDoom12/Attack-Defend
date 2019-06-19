@@ -25,7 +25,7 @@ class ADC_playerMenuMain {
     	idc = IDC_PMENU_LISTBOX;
     	x = 0.407164 * safezoneW + safezoneX;
     	y = 0.302 * safezoneH + safezoneY;
-    	w = 0.185671 * safezoneW;
+    	w = 0.185671 * safezoneW + 0.1;
     	h = 0.407 * safezoneH;
       font = P_FONT;
       onLbDblClick = "['select'] call ADC_fnc_playerMenu";

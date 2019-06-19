@@ -16,6 +16,8 @@ diag_log         "==============================================================
 waitUntil {!isNil "preInitDone"};
 call compile preprocessFileLineNumbers "serverStartConfiguration.sqf";
 
+DefaultOptions = [true,true,true,true,true,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
+publicVariable "DefaultOptions";
 
 [] spawn DFUNC(srvWarningInit);
 [] spawn DFUNC(capture);
@@ -66,13 +68,13 @@ diag_log format	["=================================  Mission: %1 ===============
 		["write", ["Player Stats", "Deaths", _deaths]] call _inidbi;
 		["write", ["Player Stats", "kdRatio", _kdratio]] call _inidbi;
 		["write", ["MK-1", "Kills", _kills]] call _inidbi;
-		["write", ["MX-SW", "Kills", _kills]] call _inidbi;
+		["write", ["MX_SW", "Kills", _kills]] call _inidbi;
 		["write", ["MXM", "Kills", _kills]] call _inidbi;
-		["write", ["Spar-16s", "Kills", _kills]] call _inidbi;
-		["write", ["Car-95-1", "Kills", _kills]] call _inidbi;
-		["write", ["MX-SW", "Kills", _kills]] call _inidbi;
-		["write", ["MK-18", "Kills", _kills]] call _inidbi;
-		["write", ["MK-14", "Kills", _kills]] call _inidbi;
+		["write", ["Spar-16s/Car95-1", "Kills", _kills]] call _inidbi;
+		["write", ["(5.45-5.8) Assault Rifles", "Kills", _kills]] call _inidbi;
+		["write", ["Marksman Rifle", "Kills", _kills]] call _inidbi;
+		["write", ["SMGs", "Kills", _kills]] call _inidbi;
+		["write", ["(6.5-7.62) Assault Rifles", "Kills", _kills]] call _inidbi;
 		systemChat "Finished With Data gen";
 		_s = "Everyone welcome " + _playerName + " Its his first time on the server";
 		_s remoteExec ["systemChat"];
@@ -108,12 +110,13 @@ diag_log format	["=================================  Mission: %1 ===============
 	_deaths = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
 	_ratio = ["read", ["Player Stats", "kdRatio", []]] call _inidbi;
 	_Mk1 = ["read", ["MK-1", "Kills", []]] call _inidbi;
-	_MXSW = ["read", ["MX-SW", "Kills", []]] call _inidbi;
+	_MXSW = ["read", ["MX_SW", "Kills", []]] call _inidbi;
 	_MXM = ["read", ["MXM", "Kills", []]] call _inidbi;
-	_Spar16 = ["read", ["Spar-16s", "Kills", []]] call _inidbi;
-	_car95 = ["read", ["Car-95-1", "Kills", []]] call _inidbi;
-	_MK18 = ["read", ["MK-18", "Kills", []]] call _inidbi;
-	_MK14 = ["read", ["MK-14", "Kills", []]] call _inidbi;
+	_Spar16 = ["read", ["Spar-16s/Car95-1", "Kills", []]] call _inidbi;
+	_LPAR = ["read", ["(5.45-5.8) Assault Rifles", "Kills", []]] call _inidbi;
+	_MR = ["read", ["Marksman Rifle", "Kills", []]] call _inidbi;
+	_SMG = ["read", ["SMGs", "Kills", []]] call _inidbi;
+	_HPAR = ["read", ["(6.5-7.62) Assault Rifles", "Kills", []]] call _inidbi;
 	if (_deaths >0) then{
 		_ratio = _kills / _deaths;
 	};
@@ -123,12 +126,12 @@ diag_log format	["=================================  Mission: %1 ===============
 	_mk1string = "MK-1 Kills: " + str (_Mk1);
 	_mxswstring = "MX-SW Kills: " + str(_MXSW);
 	_mxmstring = "MXM Kills: " + str(_MXM);
-	_Spar16string = "Spar-16s Kills: " + str (_Spar16);
-	_Car95String = "Car95 Kills: " + str(_car95);
-	_mk14string = "MK-18 Kills: " + str(_MK18);
-	_mk18string = "MK-14 Kills: " + str (_MK14);
-
-	StatsArray = [_killstring,_deathstring,_ratiostring,_mk1string,_mxswstring,_mxmstring,_Spar16string,_Car95string,_mk14string,_mk18string];
+	_Spar16string = "Spar-16s/Car95-1 Kills: " + str (_Spar16);
+	_LPARString = "(5.45-5.8) Rifle Kills: " + str(_LPAR);
+	_MRString = "Marksman Rifle Kills: " + str(_MR);
+	_SMGString = "SMG kills: " + str (_SMG);
+	_HPARString = "(6.5-7.62) Assault Rifle Kills:" + str (_HPAR);
+	StatsArray = [_killstring,_deathstring,_ratiostring,_mk1string,_mxswstring,_mxmstring,_Spar16string,_LPARString,_MRString,_SMGString,_HPARString];
 	publicVariable "StatsArray";
 };
 "LoadDataForChallenges" addPublicVariableEventHandler
@@ -142,13 +145,14 @@ diag_log format	["=================================  Mission: %1 ===============
 	_deaths = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
 	_ratio = ["read", ["Player Stats", "kdRatio", []]] call _inidbi;
 	_Mk1 = ["read", ["MK-1", "Kills", []]] call _inidbi;
-	_MXSW = ["read", ["MX-SW", "Kills", []]] call _inidbi;
+	_MXSW = ["read", ["MX_SW", "Kills", []]] call _inidbi;
 	_MXM = ["read", ["MXM", "Kills", []]] call _inidbi;
-	_Spar16 = ["read", ["Spar-16s", "Kills", []]] call _inidbi;
-	_car95 = ["read", ["Car-95-1", "Kills", []]] call _inidbi;
-	_MK18 = ["read", ["MK-18", "Kills", []]] call _inidbi;
-	_MK14 = ["read", ["MK-14", "Kills", []]] call _inidbi;
-	StatsForChallenge = [_kills,_deaths,_ratio,_Mk1,_MXSW,_MXM,_Spar16,_car95,_MK18,_MK14];
+	_Spar16 = ["read", ["Spar-16s/Car95-1", "Kills", []]] call _inidbi;
+	_LPAR = ["read", ["(5.45-5.8) Assault Rifles", "Kills", []]] call _inidbi;
+	_MR = ["read", ["Marksman Rifle", "Kills", []]] call _inidbi;
+	_SMG = ["read", ["SMGs", "Kills", []]] call _inidbi;
+	_HPAR = ["read", ["(6.5-7.62) Assault Rifles", "Kills", []]] call _inidbi;
+	StatsForChallenge = [_kills,_deaths,_ratio,_Mk1,_MXSW,_MXM,_Spar16,_LPAR,_MR,_SMG,_HPAR];
 	_clientID publicVariableClient "StatsForChallenge";
 };
 "AddKill" addPublicVariableEventHandler
@@ -181,27 +185,31 @@ diag_log format	["=================================  Mission: %1 ===============
 		_kills = _kills + 1;
 		["write", ["MXM", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "arifle_SPAR_02_blk_F") then{
-		_kills = ["read", ["Spar-16s", "Kills", []]] call _inidbi;
+	if (_weaponName == "arifle_SPAR_02_blk_F" || _weaponName == "arifle_CTARS_ghex_F" ) then{
+		_kills = ["read", ["Spar-16s/Car95-1", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
-		["write", ["Spar-16s", "Kills", _kills]] call _inidbi;
+		["write", ["Spar-16s/Car95-1", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "arifle_CTARS_ghex_F") then{
-		_kills = ["read", ["Car-95-1", "Kills", []]] call _inidbi;
+	if (_weaponName == "arifle_Mk20_plain_F" || _weaponName == "arifle_TRG21_F" || _weaponName == "arifle_AKS_F" || _weaponName == "arifle_CTAR_ghex_F" || _weaponName == "arifle_SPAR_01_blk_F") then{
+		_kills = ["read", ["(5.45-5.8) Assault Rifles", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
-		["write", ["Car-95-1", "Kills", _kills]] call _inidbi;
+		["write", ["(5.45-5.8) Assault Rifles", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "srifle_EBR_F")then{
-		_kills = ["read", ["MK-18", "Kills", []]] call _inidbi;
+	if (_weaponName == "srifle_EBR_F" || _weaponName == "arifle_SPAR_03_blk_F" || _weaponName == "srifle_DMR_06_camo_F"")then{
+		_kills = ["read", ["Marksman Rifle", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
-		["write", ["MK-18", "Kills", _kills]] call _inidbi;
+		["write", ["Marksman Rifle", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "srifle_DMR_06_camo_F")then{
-		_kills = ["read", ["MK-14", "Kills", []]] call _inidbi;
+	if (_weaponName == "SMG_01_F" || _weaponName == "SMG_05_F" || _weaponName == "hgun_PDW2000_F" || _weaponName == "SMG_03_TR_black")then{
+		_kills = ["read", ["SMGs", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
-		["write", ["MK-14", "Kills", _kills]] call _inidbi;
+		["write", ["SMGs", "Kills", _kills]] call _inidbi;
 	};
-	
+	if (_weaponName == "arifle_Katiba_F" || _weaponName == "arifle_MX_Black_F" || _weaponName == "arifle_AK12_F" || _weaponName == "arifle_ARX_blk_F" || _weaponName == "arifle_ARX_ghex_F")then{
+		_kills = ["read", ["(6.5-7.62) Assault Rifles", "Kills", []]] call _inidbi;
+		_kills = _kills + 1;
+		["write", ["(6.5-7.62) Assault Rifles", "Kills", _kills]] call _inidbi;
+	};	
 };
 "AddDeath" addPublicVariableEventHandler
 {
@@ -214,3 +222,4 @@ diag_log format	["=================================  Mission: %1 ===============
   	_kdRatioKilled = _killsOfKilled / _deaths;
   	["write", ["Player Stats", "kdRatio", _kdRatioKilled]] call _inidbi2;
 };
+

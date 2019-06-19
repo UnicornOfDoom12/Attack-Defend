@@ -9,6 +9,7 @@ fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_definecl
 call fn_defineclasses;
 remoteExec ["fn_defineclasses"];
 fn_getdata = compile preprocessFileLineNumbers "getData.sqf";
+fn_CheckBox = compile preprocessFileLineNumbers "DTAS_main\actions\fn_CallCheckbox.sqf";
 _obj = _this select 0;
 
 _obj allowDamage false;
@@ -77,4 +78,5 @@ _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_UnpauseRoundS
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ReLocateObjectivePosition"], {_this call DFUNC(relocate)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 3) && !roundInProgress"];
 //_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeE"], {_this call DFUNC(SeriousModeEnable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
 //_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeD"], {_this call DFUNC(SeriousModeDisable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
-_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeTog"], {_this call DFUNC(SeriousModeHandler)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
+//_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeTog"], {_this call DFUNC(SeriousModeHandler)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
+_obj addAction ["Checkbox configuartion", {call fn_CheckBox}];

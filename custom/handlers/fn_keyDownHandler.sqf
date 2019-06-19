@@ -24,7 +24,7 @@ params [
   ["_alt", false, [false]],
   ["_ctrl", false, [false]]
 ];
-
+_Options = DefaultOptions;
 scopeName "main";
 private _overRun = false;
 
@@ -43,7 +43,7 @@ for "_i" from 0 to 9 do {
 };
 
 
-if (_key in actionKeys "GetOver" && SeriousMode == "Normal") then {
+if (_key in actionKeys "GetOver" && _Options select 12) then {
   if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player in ["STAND", "CROUCH"]} && {speed player > 2} && {((velocity player) select 2) < 2.5} && {time - (player getVariable [VARQ(jumpActionTime), 0]) > 1.5}) exitWith {
     player setVariable [VARQ(jumpActionTime), time, true];
     [player] remoteExec [QFNC(jumpAction), 0]; //Global execution
