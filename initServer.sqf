@@ -160,6 +160,10 @@ diag_log format	["=================================  Mission: %1 ===============
 	_data = (_this select 1);
 	_UID = (_data select 0);
 	_weaponName = (_data select 1);
+	systemChat str(_UID);
+	systemChat _weaponName;
+	_a = "adddd";
+	_a remoteExec ["systemChat"];
  	_inidbi = ["new", _UID] call OO_INIDBI;
   	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
   	_deathsOfKiller = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
@@ -195,7 +199,7 @@ diag_log format	["=================================  Mission: %1 ===============
 		_kills = _kills + 1;
 		["write", ["(5.45-5.8) Assault Rifles", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "srifle_EBR_F" || _weaponName == "arifle_SPAR_03_blk_F" || _weaponName == "srifle_DMR_06_camo_F"")then{
+	if (_weaponName == "srifle_EBR_F" || _weaponName == "arifle_SPAR_03_blk_F" || _weaponName == "srifle_DMR_06_camo_F")then{
 		_kills = ["read", ["Marksman Rifle", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
 		["write", ["Marksman Rifle", "Kills", _kills]] call _inidbi;

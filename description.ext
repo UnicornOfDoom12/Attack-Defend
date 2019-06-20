@@ -308,7 +308,7 @@ class MyCheckBoxes
 		"\A3\ui_f\data\map\markers\nato\c_car.paa", // random vehicles 11
 		"\A3\ui_f\data\map\markers\handdrawn\start_CA.paa", // jump script 12
 		"\A3\ui_f\data\map\markers\nato\c_air.paa", // Helicopters 13
-		"\A3\ui_f\data\map\markers\nato\c_car.paa",
+		"\A3\ui_f\data\map\markers\military\dot_CA.paa", // Ifrit smokes 14
 		"\A3\ui_f\data\map\markers\nato\c_car.paa",
 		"\A3\ui_f\data\map\markers\nato\c_car.paa",
 		"\A3\ui_f\data\map\markers\nato\c_car.paa",
@@ -328,7 +328,7 @@ class MyCheckBoxes
 		"\A3\ui_f\data\map\markers\nato\c_car.paa"};
 		
 	values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
-	tooltips[] = {"SMGs","(5.45-5.8) Rifles","(6.5-7.62) Rifles","Marksman Rifles","Light Support Weapons","Uncommon RPUK guns","RPUK Supply Drop Weapons","Meme Guns","Ifrits","Hunters","Striders","Random Vehicles","Jump Script","Helicopters","tip 15","tip16","tip17","tip18","tip19","tip20","tip21","tip22","tip23","tip24","tip25","tip26","tip27","tip28","tip29","tip30","tip31"};
+	tooltips[] = {"SMGs","(5.45-5.8) Rifles","(6.5-7.62) Rifles","Marksman Rifles","Light Support Weapons","Uncommon RPUK guns","RPUK Supply Drop Weapons","Meme Guns","Ifrits","Hunters","Striders","Random Vehicles","Jump Script","Helicopters","No Ifrit Smokes","tip16","tip17","tip18","tip19","tip20","tip21","tip22","tip23","tip24","tip25","tip26","tip27","tip28","tip29","tip30","tip31"};
 };
 
 respawnDialog = false;

@@ -168,11 +168,11 @@ if(_Options select 0)then{
 	"Protector"
 	],
 	[	
-	["SMG_03_TR_black",_SMG57Sup,"",_baseScope,["50Rnd_570x28_SMG_03",30],[],""],
+	["SMG_03_TR_black",_SMG57Sup,"",_baseScope,["50Rnd_570x28_SMG_03",50],[],""],
 	[],
 	[],
 	[_attackerUniform,[["FirstAidKit",5]]],
-	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,30]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,50]]],
 	[],
 	_helmet,
 	"G_Bandanna_beast",
@@ -209,11 +209,11 @@ if(_Options select 0)then{
 	"Protector"
 	],
 	[	
-	["SMG_03_TR_black",_SMG57Sup,"",_baseScope,["50Rnd_570x28_SMG_03",30],[],""],
+	["SMG_03_TR_black",_SMG57Sup,"",_baseScope,["50Rnd_570x28_SMG_03",50],[],""],
 	[],
 	[],
 	[_defenderUniform,[["FirstAidKit",5]]],
-	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,30]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["50Rnd_570x28_SMG_03",15,50]]],
 	[],
 	_dhelmet,
 	"G_Bandanna_beast",
@@ -996,4 +996,4 @@ dClasses = [
 
 
 
-//call fn_GetIndexOfCommand;
+call fn_GetIndexOfCommand;

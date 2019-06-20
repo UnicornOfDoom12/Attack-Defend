@@ -62,7 +62,8 @@ fnc_isAdmin =
 /*{
 	_obj addAction [format ["<t color='#ffe400'>%1</t>", (_x select 0)], {_this call DFUNC(pickSpawnAction)}, [_x select 1], (_x select 2), false, true, "", "!forceRoundStart && canChangeClass && (!roundInProgress) && (attackerSide == playerSide) && ([player] call fnc_isLeaderWithGroup)"];
 } forEach [[localize "STR_IfritInsertion", 0, 14], [localize "STR_BoatInsertion", 1, 13], [localize "STR_SubmarineInsertion", 2, 12],[localize "STR_OrcaInsertion", 3, 11], [localize "STR_ProwlerInsertion", 4, 10], [localize "STR_RandomVehicleInsertion", 5, 9]];
-*/_UID = getPlayerUID player;
+*/
+_UID = getPlayerUID player;
 _clientID = clientOwner;
 
 _obj addAction [format ["<t color='#2080ff'>%1</t>", localize "STR_ResumeSpectating"], {[] call DFUNC(nextSpectateUnit)}, [""], 15, false, true, "",  "roundInProgress && (!isPlaying) && (!(player getVariable ['isPlaying', false]))"];
@@ -78,5 +79,4 @@ _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_UnpauseRoundS
 _obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_ReLocateObjectivePosition"], {_this call DFUNC(relocate)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >= 3) && !roundInProgress"];
 //_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeE"], {_this call DFUNC(SeriousModeEnable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
 //_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeD"], {_this call DFUNC(SeriousModeDisable)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
-//_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeTog"], {_this call DFUNC(SeriousModeHandler)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
-_obj addAction ["Checkbox configuartion", {call fn_CheckBox}];
+_obj addAction [format ["<t color='#CA2E2E'>%1</t>", localize "STR_SeriousModeTog"], {_this call DFUNC(SeriousModeHandler)}, [], 0, false, false, "", "(call ADC_fnc_adminLevel >=3) && !roundInProgress"];
