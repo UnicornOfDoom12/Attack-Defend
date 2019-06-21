@@ -9,6 +9,7 @@ fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_definecl
 call fn_defineclasses;
 remoteExec ["fn_defineclasses"];
 fn_getdata = compile preprocessFileLineNumbers "getData.sqf";
+fn_CheckBox = compile preprocessFileLineNumbers "DTAS_main\actions\fn_CallCheckbox.sqf";
 _obj = _this select 0;
 
 _obj allowDamage false;
@@ -61,7 +62,8 @@ fnc_isAdmin =
 /*{
 	_obj addAction [format ["<t color='#ffe400'>%1</t>", (_x select 0)], {_this call DFUNC(pickSpawnAction)}, [_x select 1], (_x select 2), false, true, "", "!forceRoundStart && canChangeClass && (!roundInProgress) && (attackerSide == playerSide) && ([player] call fnc_isLeaderWithGroup)"];
 } forEach [[localize "STR_IfritInsertion", 0, 14], [localize "STR_BoatInsertion", 1, 13], [localize "STR_SubmarineInsertion", 2, 12],[localize "STR_OrcaInsertion", 3, 11], [localize "STR_ProwlerInsertion", 4, 10], [localize "STR_RandomVehicleInsertion", 5, 9]];
-*/_UID = getPlayerUID player;
+*/
+_UID = getPlayerUID player;
 _clientID = clientOwner;
 
 _obj addAction [format ["<t color='#2080ff'>%1</t>", localize "STR_ResumeSpectating"], {[] call DFUNC(nextSpectateUnit)}, [""], 15, false, true, "",  "roundInProgress && (!isPlaying) && (!(player getVariable ['isPlaying', false]))"];

@@ -9,6 +9,7 @@ fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_definecl
 call fn_defineclasses;
 remoteExec ["fn_defineclasses"];
 fn_getdata = compile preprocessFileLineNumbers "getData.sqf";
+fn_CheckBox = compile preprocessFileLineNumbers "DTAS_main\actions\fn_CallCheckbox.sqf";
 _obj = _this select 0;
 
 _obj allowDamage false;
@@ -111,6 +112,7 @@ _obj addAction [format ["<t color='#2080ff'>%1</t>", localize "STR_ResumeSpectat
 
 _obj addAction [format ["<t color='#32cd32'>%1</t>", localize "STR_Ready"], {_this call DFUNC(readyAction)}, [], 5, false, true, "", "(!roundInProgress) && ((playerSide != attackerSide) || ((group player) getVariable ['insertionPosPicked', false])) && (!((group player) getVariable ['groupReady', false])) && ([player] call fnc_isLeaderWithGroup)"];
 _obj addAction ["View your statistics", {call fn_getdata}];
+
 
 //_obj addAction [format ["<t color='#ffc000'>%1</t>", localize "STR_GroupManagementMenu"], "groups\refresh.sqf", [], 0, false, false, "", "true"];
 /*

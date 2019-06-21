@@ -135,4 +135,5 @@ class Custom_Base {
     file = "custom\vote";
     class registerVote {};
   };
+
 };

@@ -1,5 +1,5 @@
-#include "..\..\script_macros.hpp"
-fn_SeriousModeEnable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeEnable.sqf";
+
+/*fn_SeriousModeEnable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeEnable.sqf";
 fn_SeriousModeDisable = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeDisable.sqf";
 fn_SeriousModeFunTime = compile preprocessFileLineNumbers "DTAS_main\admin\fn_SeriousModeFunTime.sqf";
 fn_defineclasses = compile preprocessFileLineNumbers "DTAS_main\main\fn_defineclasses.sqf";
@@ -36,8 +36,9 @@ publicVariable SeriousMode;
 publicVariable "SeriousMode";
 [[], fn_defineclasses] remoteExec ["spawn"];
 [] call DFUNC(defineClasses);
-/*
-_uid = getPlayerUID player;
-_weapon = selectRandom ["srifle_EBR_F","srifle_DMR_03_F","srifle_DMR_06_camo_F","arifle_CTARS_ghex_F","arifle_SPAR_02_blk_F","arifle_MXM_F","arifle_MX_SW_black_F"];
-Addkill = [_uid,_weapon];
-publicVariableServer "AddKill";*/
+*/
+
+with uiNamespace do
+{
+	ctrl = findDisplay 46 createDisplay "RscDisplayEmpty" ctrlCreate ["MyCheckBoxes", -1]; 
+};
