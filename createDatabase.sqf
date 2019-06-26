@@ -1,6 +1,7 @@
 systemChat "Welcome to the server, creating a data entry for you now";
 _clientID = (_this select 0);
 _UID = (_this select 1);
+_UID = _UID + "AD";
 _playerName = (_this select 2);
 _kills = (_this select 3);
 _deaths = (_this select 4);

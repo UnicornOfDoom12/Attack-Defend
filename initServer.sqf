@@ -41,6 +41,7 @@ diag_log format	["=================================  Mission: %1 ===============
 	_data = (_this select 1);
 	_clientID = (_data select 0);
 	_UID = (_data select 1);
+	_UID = _UID + "AD";
 	_playerName = (_data select 2);
 	_inidbi = ["new", _UID] call OO_INIDBI;
 	_fileExist = "exists" call _inidbi;
@@ -76,14 +77,15 @@ diag_log format	["=================================  Mission: %1 ===============
 		["write", ["SMGs", "Kills", _kills]] call _inidbi;
 		["write", ["(6.5-7.62) Assault Rifles", "Kills", _kills]] call _inidbi;
 		systemChat "Finished With Data gen";
-		_s = "Everyone welcome " + _playerName + " Its his first time on the server";
-		_s remoteExec ["systemChat"];
+		//_s = "Everyone welcome " + _playerName + " Its his first time on the server";
+		//_s remoteExec ["systemChat"];
 	};
 };
 "loadDataa" addPublicVariableEventHandler
 {
 	_data = (_this select 1);
 	_UID = (_data select 0);
+	_UID = _UID + "AD";
 	_clientID = (_data select 1);
 	_inidbi = ["new", _UID] call OO_INIDBI;
 	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
@@ -103,6 +105,7 @@ diag_log format	["=================================  Mission: %1 ===============
 {
 	_data = (_this select 1);
 	_UID = (_data select 0);
+	_UID = _UID + "AD";
 	_clientID = (_data select 1);
 	_inidbi = ["new", _UID] call OO_INIDBI;
 	_Name = ["read", ["Player Information", "Name", []]] call _inidbi;
@@ -139,6 +142,7 @@ diag_log format	["=================================  Mission: %1 ===============
 
 	_data = (_this select 1);
 	_UID =(_data select 0);
+	_UID = _UID + "AD";
 	_clientID = (_data select 1);
 	_inidbi = ["new", _UID] call OO_INIDBI;
 	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
@@ -159,6 +163,7 @@ diag_log format	["=================================  Mission: %1 ===============
 {
 	_data = (_this select 1);
 	_UID = (_data select 0);
+	_UID = _UID + "AD";
 	_weaponName = (_data select 1);
 	systemChat str(_UID);
 	systemChat _weaponName;
@@ -218,6 +223,7 @@ diag_log format	["=================================  Mission: %1 ===============
 "AddDeath" addPublicVariableEventHandler
 {
 	_UID2 =(_this select 1);
+	_UID2 = _UID2 + "AD";
  	_inidbi2 = ["new", _UID2] call OO_INIDBI;
   	_deaths = ["read", ["Player Stats", "Deaths", []]] call _inidbi2;
   	_deaths = _deaths + 1;
