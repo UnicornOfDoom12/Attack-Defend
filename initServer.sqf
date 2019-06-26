@@ -165,10 +165,10 @@ diag_log format	["=================================  Mission: %1 ===============
 	_UID = (_data select 0);
 	_UID = _UID + "AD";
 	_weaponName = (_data select 1);
-	systemChat str(_UID);
-	systemChat _weaponName;
-	_a = "adddd";
-	_a remoteExec ["systemChat"];
+	//systemChat str(_UID);
+	//systemChat _weaponName;
+	//_a = "adddd";
+	//_a remoteExec ["systemChat"];
  	_inidbi = ["new", _UID] call OO_INIDBI;
   	_kills = ["read", ["Player Stats", "Kills", []]] call _inidbi;
   	_deathsOfKiller = ["read", ["Player Stats", "Deaths", []]] call _inidbi;
