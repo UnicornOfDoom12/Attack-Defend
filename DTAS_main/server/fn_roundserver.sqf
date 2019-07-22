@@ -420,6 +420,7 @@ while {true} do
 	_maxGroupIndex = count _groups;
 	_bCont = true;
 	_MRAPS = [];
+	_vehType = "B_MRAP_01_F";
 	if (_Options select 8)then{
 		_MRAPS append ["O_MRAP_02_F"];
 	};
@@ -444,10 +445,7 @@ while {true} do
 				_unitsWithoutGroup = _unitsWithoutGroup - _units;
 				_slotCount = 0;
 				_vehType = selectRandom _MRAPS;
-				if (_vehType == null)then{
-					_vehType = "B_MRAP_01_F";
-				};
-				systemChat SeriousMode;
+				
 				//Adding an IF statement for serious mode here to improve the whole efficiency of the switch case
 				switch (_group getVariable ["insertionType", 0]) do
 				{
@@ -564,38 +562,28 @@ while {true} do
 				clearBackpackCargoGlobal _veh;
 				vehArr set [count vehArr, _veh];
 
-				if (_veh isKindOf "B_MRAP_01_F") then 
+				if (_veh isKindOf "B_MRAP_01_F") then // hunter
 				{
-					{
-						_veh setObjectTextureGlobal [0,"Textures\PHTS_Hunter.paa"];
-					}forEach [_tex,[0.02,0.02,0.02,1]]
+					
+					_veh setObjectTextureGlobal [0,"Textures\ButchHunt.paa"];
+					_veh setObjectTextureGlobal [1,"Textures\ButchHuntBack.paa"];
+					
 				};
-				if (_veh isKindOf "O_MRAP_02_F") then 
+				if (_veh isKindOf "O_MRAP_02_F") then  // ifrit
 				{
-					//For when jeep creates one
-					//_veh setObjectTextureGlobal [0,"Textures\PHTS_Ifrit.paa"];
-											  	//White	       //Yellow    //Pink		//Cyan			//Black			//Purple		//Blue		//Red		//Green
-					private _tex = selectRandom [[1,1,1,0.8],[1,1,0,0.8],[1,0,0.2,0.8],[0,1,1,0.8],[0.02,0.02,0.02,1],[0.2,0,1,0.8],[0,0.2,1,0.8], [1,0,0,1], [0,1,0.3,0.8]];
-					{
-						_x params ["_red", "_green", "_blue", "_alpha"];
-						private _format = format ["#(rgb,8,8,3)color(%1,%2,%3,%4)", _red, _green, _blue, _alpha];
-						_veh setObjectTextureGlobal [_forEachIndex, _format];
-					} forEach [_tex,[0.02,0.02,0.02,1]];
+					_veh setObjectTextureGlobal [0,"Textures\ButchIfritFront.paa"];
+					_veh setObjectTextureGlobal [1,"Textures\ButchIfritBack.paa"];
 					if(_Options select 14) then{
 						_veh setVehicleAmmo 0;
 					};
 				};
-				if (_veh isKindOf "I_MRAP_03_F") then {
+				if (_veh isKindOf "I_MRAP_03_F") then { // strider
+					_veh setObjectTextureGlobal [0,"Textures\ButchStrider.paa"];
 					if (_Options select 14) then {
 						_veh setVehicleAmmo 0;
 					};
 				};
-				if (_veh isKindOf "B_Heli_Light_01_F") then 
-				{
-					{
-						_veh setObjectTextureGlobal [0,"Textures\hummingbird.paa"];	
-					}forEach [_tex,[0.02,0.02,0.02,1]];
-				};
+
 			};
 
 			_driverArray = [];

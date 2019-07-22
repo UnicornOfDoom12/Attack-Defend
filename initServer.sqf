@@ -6,35 +6,6 @@
 *
 *   Description: Server-side player init (when player joins mission)
 */
-
-
-private _initStart = diag_tickTime;
-diag_log format ["================================ Misson File: %1 ================================", missionName];
-diag_log         "                               Initializing Server                               ";
-diag_log         "=================================================================================";
-
-waitUntil {!isNil "preInitDone"};
-call compile preprocessFileLineNumbers "serverStartConfiguration.sqf";
-
-DefaultOptions = [true,true,true,true,true,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
-publicVariable "DefaultOptions";
-
-[] spawn DFUNC(srvWarningInit);
-[] spawn DFUNC(capture);
-[] spawn DFUNC(roundServer);
-[] spawn DFUNC(endHandler);
-[] spawn DFUNC(weather);
-
-
-addMissionEventHandler ["HandleDisconnect", { _this spawn FUNC(handleDisconnect) }];
-
-["Initialize"] call BIS_fnc_dynamicGroups;
-
-private _execTime = diag_tickTime - _initStart;
-diag_log         "=================================================================================";
-diag_log 				 "=========================== Server Initialization Completed =====================";
-diag_log format ["========================== Time: The initialization took %1 =====================", [_execTime, "MM:SS.MS"] call BIS_fnc_secondsToString];
-diag_log format	["=================================  Mission: %1 ===============================", missionName];
 "checkForDatabase" addPublicVariableEventHandler
 {
 	private ["_data"];
@@ -77,8 +48,8 @@ diag_log format	["=================================  Mission: %1 ===============
 		["write", ["SMGs", "Kills", _kills]] call _inidbi;
 		["write", ["(6.5-7.62) Assault Rifles", "Kills", _kills]] call _inidbi;
 		systemChat "Finished With Data gen";
-		//_s = "Everyone welcome " + _playerName + " Its his first time on the server";
-		//_s remoteExec ["systemChat"];
+		_s = "Everyone welcome " + _playerName + " Its his first time on the server";
+		_s remoteExec ["systemChat"];
 	};
 };
 "loadDataa" addPublicVariableEventHandler
@@ -185,7 +156,7 @@ diag_log format	["=================================  Mission: %1 ===============
 		["write", ["MK-1", "Kills", _kills]] call _inidbi;
 	};
 	if (_weaponName == "arifle_MX_SW_black_F" || _weaponName == "arifle_MX_SW_F")then{
-		_kills = ["read", ["MX-SW", "Kills", []]] call _inidbi;
+		_kills = ["read", ["MX_SW", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
 		["write", ["MX_SW", "Kills", _kills]] call _inidbi;
 	};
@@ -232,4 +203,33 @@ diag_log format	["=================================  Mission: %1 ===============
   	_kdRatioKilled = _killsOfKilled / _deaths;
   	["write", ["Player Stats", "kdRatio", _kdRatioKilled]] call _inidbi2;
 };
+
+private _initStart = diag_tickTime;
+diag_log format ["================================ Misson File: %1 ================================", missionName];
+diag_log         "                               Initializing Server                               ";
+diag_log         "=================================================================================";
+
+waitUntil {!isNil "preInitDone"};
+call compile preprocessFileLineNumbers "serverStartConfiguration.sqf";
+
+DefaultOptions = [true,true,true,true,true,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
+publicVariable "DefaultOptions";
+
+[] spawn DFUNC(srvWarningInit);
+[] spawn DFUNC(capture);
+[] spawn DFUNC(roundServer);
+[] spawn DFUNC(endHandler);
+[] spawn DFUNC(weather);
+
+
+addMissionEventHandler ["HandleDisconnect", { _this spawn FUNC(handleDisconnect) }];
+
+["Initialize"] call BIS_fnc_dynamicGroups;
+
+private _execTime = diag_tickTime - _initStart;
+diag_log         "=================================================================================";
+diag_log 				 "=========================== Server Initialization Completed =====================";
+diag_log format ["========================== Time: The initialization took %1 =====================", [_execTime, "MM:SS.MS"] call BIS_fnc_secondsToString];
+diag_log format	["=================================  Mission: %1 ===============================", missionName];
+
 
