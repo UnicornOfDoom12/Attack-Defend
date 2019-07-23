@@ -106,7 +106,7 @@
 	_SMGString = "SMG kills: " + str (_SMG);
 	_HPARString = "(6.5-7.62) Assault Rifle Kills:" + str (_HPAR);
 	StatsArray = [_killstring,_deathstring,_ratiostring,_mk1string,_mxswstring,_mxmstring,_Spar16string,_LPARString,_MRString,_SMGString,_HPARString];
-	publicVariable "StatsArray";
+	_clientID publicVariableClient "StatsArray";
 };
 "LoadDataForChallenges" addPublicVariableEventHandler
 {

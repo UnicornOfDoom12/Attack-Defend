@@ -30,15 +30,17 @@ _data = StatsForChallenge;
 _nvgs = "NVGoggles_OPFOR";
 _attackerUniform = "U_I_CombatUniform_shortsleeve";
 _defenderUniform = "U_I_C_Soldier_Para_5_F";
+_Avest = "V_PlateCarrier2_blk";
+_Dvest = "V_PlateCarrier2_rgr";
 if((_data select 0) >= 30)then{
 	_attackerUniform = "U_B_CTRG_Soldier_F";
 	_defenderUniform = "U_B_CTRG_Soldier_F";
+	_Dvest = "V_PlateCarrier2_blk";
 }else{
 	_attackerUniform = "U_I_CombatUniform_shortsleeve";
 	_defenderUniform = "U_I_C_Soldier_Para_5_F";
 };
-_Avest = "V_PlateCarrier2_blk";
-_Dvest = "V_PlateCarrier2_rgr";
+
 _helmet = "H_PASGT_basic_black_F";
 _dhelmet = "H_HelmetB_light";
 if((_data select 0) >=20)then{
