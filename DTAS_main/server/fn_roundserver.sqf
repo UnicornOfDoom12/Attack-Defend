@@ -573,6 +573,7 @@ while {true} do
 				{
 					_veh setObjectTextureGlobal [0,"Textures\ButchIfritFront.paa"];
 					_veh setObjectTextureGlobal [1,"Textures\ButchIfritBack.paa"];
+					
 					if(_Options select 14) then{
 						_veh setVehicleAmmo 0;
 					};
