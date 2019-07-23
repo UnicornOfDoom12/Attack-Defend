@@ -571,8 +571,9 @@ while {true} do
 				};
 				if (_veh isKindOf "O_MRAP_02_F") then  // ifrit
 				{
-					_veh setObjectTextureGlobal [0,"Textures\ButchIfritFront.paa"];
-					_veh setObjectTextureGlobal [1,"Textures\ButchIfritBack.paa"];
+					
+					_veh setObjectTextureGlobal [0,"Textures\ButchIfritBack.paa"];
+					_veh setObjectTextureGlobal [1,"Textures\ButchIfritFront.paa"];
 					if(_Options select 14) then{
 						_veh setVehicleAmmo 0;
 					};
