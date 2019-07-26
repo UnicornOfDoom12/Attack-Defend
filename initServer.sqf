@@ -160,12 +160,12 @@
 		_kills = _kills + 1;
 		["write", ["MX_SW", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "arifle_MXM_F" || _weaponName == "arifle_MXM_black_F")then{
+	if (_weaponName == "arifle_MXM_F" || _weaponName == "arifle_MXM_black_F" || _weaponName == "arifle_MSBS65_MARK_F" || _weaponName == "arifle_MSBS65_MARK_black_F")then{
 		_kills = ["read", ["MXM", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
 		["write", ["MXM", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "arifle_SPAR_02_blk_F" || _weaponName == "arifle_CTARS_ghex_F" ) then{
+	if (_weaponName == "arifle_SPAR_02_blk_F" || _weaponName == "arifle_CTARS_ghex_F" || _weaponName == "arifle_RPK12_F") then{
 		_kills = ["read", ["Spar-16s/Car95-1", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
 		["write", ["Spar-16s/Car95-1", "Kills", _kills]] call _inidbi;
@@ -180,12 +180,12 @@
 		_kills = _kills + 1;
 		["write", ["Marksman Rifle", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "SMG_01_F" || _weaponName == "SMG_05_F" || _weaponName == "hgun_PDW2000_F" || _weaponName == "SMG_03_TR_black")then{
+	if (_weaponName == "SMG_01_F" || _weaponName == "SMG_05_F" || _weaponName == "hgun_PDW2000_F" || _weaponName == "SMG_03_TR_black" || _weaponName == "sgun_HunterShotgun_01_F" || _weaponName == "sgun_HunterShotgun_01_sawedoff_F")then{
 		_kills = ["read", ["SMGs", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
 		["write", ["SMGs", "Kills", _kills]] call _inidbi;
 	};
-	if (_weaponName == "arifle_Katiba_F" || _weaponName == "arifle_MX_Black_F" || _weaponName == "arifle_AK12_F" || _weaponName == "arifle_ARX_blk_F" || _weaponName == "arifle_ARX_ghex_F")then{
+	if (_weaponName == "arifle_Katiba_F" || _weaponName == "arifle_MX_Black_F" || _weaponName == "arifle_AK12_F" || _weaponName == "arifle_ARX_blk_F" || _weaponName == "arifle_ARX_ghex_F" || _weaponName == "arifle_MSBS65_F" || _weaponName == "arifle_MSBS65_black_F" || _weaponName == "arifle_MSBS65_UBS_F" || _weaponName == "arifle_MSBS65_UBS_black_F" || _weaponName == "arifle_AK12U_F")then{
 		_kills = ["read", ["(6.5-7.62) Assault Rifles", "Kills", []]] call _inidbi;
 		_kills = _kills + 1;
 		["write", ["(6.5-7.62) Assault Rifles", "Kills", _kills]] call _inidbi;

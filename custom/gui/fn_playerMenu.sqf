@@ -134,7 +134,7 @@ switch (_mode) do {
 
       case 2: {
         _header ctrlSetText "SELECT YOUR PREFERED SCOPE";
-        private _scopes = ["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F"];
+        private _scopes = ["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_blk_F","optic_ico_01_f"];
         _UID = getPlayerUID player;
         _clientID = clientOwner;
         LoadDataForChallenges = [_UID,_clientID];
@@ -164,7 +164,9 @@ switch (_mode) do {
         {
           private _name = getText(configFile >> "CfgWeapons" >> _x >> "displayName");
           private _pic = getText(configFile >> "CfgWeapons" >> _x >> "picture");
-
+          if(_x isEqualTo "optic_ico_01_f")then{
+            _name = _name + " (Requires a Promet)";
+          };
           _list lbAdd _name;
           _list lbSetData [(lbSize _list) - 1, _x];
           _list lbSetPicture [(lbSize _list) - 1, _pic];

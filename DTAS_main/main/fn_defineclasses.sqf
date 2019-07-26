@@ -140,7 +140,7 @@ if !(_baseScope in (["optic_MRCO", "optic_hamr", "optic_Arco_blk_F","optic_ERCO_
 aClasses = [];
 dClasses =[];
 
-if(_Options select 0)then{
+if(_Options select 0)then{ // smg
 	aClasses append [
 	[	
 	["SMG_01_F",_SMG45Sup,"",_baseScope,["30Rnd_45ACP_Mag_SMG_01",30],[],""],
@@ -180,6 +180,32 @@ if(_Options select 0)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"ADR-97"
+	],
+	[	
+	["sgun_HunterShotgun_01_F","","","",["2Rnd_12Gauge_Pellets",2],[],""],
+	[],
+	[],
+	[_attackerUniform,[["FirstAidKit",5]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[],
+	_helmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Shotgun"
+	],
+	[	
+	["sgun_HunterShotgun_01_sawedoff_F","","","",["2Rnd_12Gauge_Pellets",2],[],""],
+	[],
+	[],
+	[_attackerUniform,[["FirstAidKit",5]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[],
+	_helmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Shotgun Sawed Off"
 	]
 	];
 	dClasses append [
@@ -221,10 +247,36 @@ if(_Options select 0)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"ADR-97"
+	],
+		[	
+	["sgun_HunterShotgun_01_F","","","",["2Rnd_12Gauge_Pellets",2],[],""],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Shotgun"
+	],
+	[	
+	["sgun_HunterShotgun_01_sawedoff_F","","","",["2Rnd_12Gauge_Pellets",2],[],""],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Shotgun Sawed off"
 	]
 	];
 };
-if(_Options select 1)then{
+if(_Options select 1)then{ // 5.45 - 5.56 rifles
 	aClasses append [
 	[	
 	["arifle_Mk20_plain_F",_LPAR556Sup,"",_baseScope,["30Rnd_556x45_Stanag",30],[],""],
@@ -294,7 +346,7 @@ if(_Options select 1)then{
 	"TRG 21"
 	]];
 };
-if(_Options select 2)then{
+if(_Options select 2)then{ // 6.5-7.62 rifles
 	aClasses append [
 	[	
 	["arifle_MX_Black_F",_HPAR65Sup,"",_baseScope,["30Rnd_65x39_caseless_mag",30],[],_HPbipod],
@@ -321,6 +373,32 @@ if(_Options select 2)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"Type 115"
+	],
+	[	
+	["arifle_MSBS65_black_F",_HPAR65Sup,"",_baseScope,["30Rnd_65x39_caseless_msbs_mag",30],[],""],
+	[],
+	[],
+	[_attackerUniform,[["FirstAidKit",5]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30]]],
+	[],
+	_helmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Promet"
+	],
+	[	
+	["arifle_MSBS65_UBS_black_F",_HPAR65Sup,"",_baseScope,["30Rnd_65x39_caseless_msbs_mag",30],[],""],
+	[],
+	[],
+	[_attackerUniform,[["FirstAidKit",5]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30],["6Rnd_12Gauge_Slug",6,6],["6Rnd_12Gauge_Pellets",6,6]]],
+	[],
+	_helmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Promet shotgun"
 	]];
 
 	dClasses append [
@@ -362,9 +440,48 @@ if(_Options select 2)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"Type 115"
+	],
+	[	
+	["arifle_MSBS65_F",_HPAR65Sup,"",_baseScope,["30Rnd_65x39_caseless_msbs_mag",30],[],""],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Promet"
+	],
+	[	
+	["arifle_MSBS65_UBS_F",_HPAR65Sup,"",_baseScope,["30Rnd_65x39_caseless_msbs_mag",30],[],""],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30],["6Rnd_12Gauge_Slug",6,6],["6Rnd_12Gauge_Pellets",6,6]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Promet shotgun"
+	],
+	[	
+	["arifle_AK12U_F",_HPAR762Sup,"",_baseScope,["30Rnd_762x39_Mag_F",30],[],_HPbipod],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_762x39_Mag_F",15,30]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"AK-12U"
 	]];
 };
-if(_Options select 3)then{
+if(_Options select 3)then{ // marksman rifles
 	aClasses append [
 	[	
 	["arifle_MXM_Black_F",_MXMSup,"",_baseScope,["30Rnd_65x39_caseless_mag",30],[],_MXMbipod],
@@ -417,6 +534,19 @@ if(_Options select 3)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"MK-18"
+	],
+	[	
+	["arifle_MSBS65_MARK_black_F",_MXMSup,"",_baseScope,["30Rnd_65x39_caseless_msbs_mag",30],[],_MXMbipod],
+	[],
+	[],
+	[_attackerUniform,[["FirstAidKit",5]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30]]],
+	[],
+	_helmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Promet Marksman"
 	]
 	];
 
@@ -459,9 +589,22 @@ if(_Options select 3)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"MK14"
+	],
+	[	
+	["arifle_MSBS65_MARK_F",_MXMSup,"",_baseScope,["30Rnd_65x39_caseless_msbs_mag",30],[],_MXMbipod],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"Promet Marksman"
 	]];
 };
-if(_Options select 4)then{
+if(_Options select 4)then{ // support weapons
 	aClasses append [
 	[	
 	["arifle_MX_SW_Black_F",_MXSWSup,"",_baseScope,["100Rnd_65x39_caseless_mag",100],[],_MXSWbipod],
@@ -516,9 +659,22 @@ if(_Options select 4)then{
 	["Rangefinder","","","",[],[],""],
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"Car-95-1"
+	],
+	[	
+	["arifle_RPK12_F",_HPAR762Sup,"",_baseScope,["75rnd_762x39_AK12_Mag_F",75],[],_HPbipod],
+	[],
+	[],
+	[_defenderUniform,[["FirstAidKit",5]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["75rnd_762x39_AK12_Mag_F",15,75]]],
+	[],
+	_dhelmet,
+	"G_Bandanna_beast",
+	["Rangefinder","","","",[],[],""],
+	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
+	"RPK-12"
 	]];
 };
-if(_Options select 5)then{
+if(_Options select 5)then{ // uncommons
 	aClasses append [
 	[	
 	["arifle_AKM_F","","",_baseScope,["30Rnd_762x39_Mag_F",30],[],""],
@@ -629,7 +785,7 @@ if(_Options select 5)then{
 	]
 	];
 };
-if(_Options select 6)then{
+if(_Options select 6)then{ // supply drops
 	aClasses append [
 	[	
 	["LMG_Mk200_F","","",_baseScope,["200Rnd_65x39_cased_Box",200],[],_MXSWbipod],
@@ -740,7 +896,7 @@ if(_Options select 6)then{
 	]
 	];
 };
-if(_Options select 7)then{
+if(_Options select 7)then{ // memes
 	aClasses append [
 	[	
 	["srifle_GM6_ghex_F","","",_baseScope,["5Rnd_127x108_Mag",5],[],""],
@@ -997,4 +1153,4 @@ dClasses = [
 
 
 
-call fn_GetIndexOfCommand;
+//call fn_GetIndexOfCommand;
