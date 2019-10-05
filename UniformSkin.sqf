@@ -15,7 +15,7 @@ while {true} do
         {
             case (uniform player isEqualTo "U_B_CTRG_Soldier_F"):
             {
-                player setObjectTextureGlobal [0,"Textures\blue.paa"];
+                player setObjectTextureGlobal [0,"Textures\blue_attacker.paa"];
             };
             case (uniform player isEqualTo "U_I_CombatUniform_shortsleeve"):
             {
@@ -30,7 +30,7 @@ while {true} do
         {
             case (uniform player isEqualTo "U_B_CTRG_Soldier_F"):
             {
-                player setObjectTextureGlobal [0,"Textures\red.paa"];
+                player setObjectTextureGlobal [0,"Textures\orangecamo_defender.paa"];
             };
         };
     };
