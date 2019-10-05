@@ -496,10 +496,13 @@ while {true} do
 								_vehType = selectRandom ["B_MRAP_01_F", "B_G_Offroad_01_repair_F", "B_G_Offroad_01_F", "B_Quadbike_01_F", "B_Truck_01_mover_F", "B_G_Van_01_transport_F", "B_T_LSV_01_unarmed_F", "B_T_VTOL_01_vehicle_F", "B_G_Van_02_vehicle_F", "O_Truck_02_fuel_F", "O_T_LSV_02_unarmed_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_sport_green_F", "C_Kart_01_Fuel_F", "C_Kart_01_Blu_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F", "C_Offroad_02_unarmed_F","I_LT_01_scout_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_LMG_F"];
 								_slotCount = 2;
 							}else{
-								_vehType = selectRandom _MRAPS;
+								_vehType = "C_Quadbike_01_F";
 							};
 							
 						};
+					};
+					if(serverName != "Presidential Hire Taxi Services")then {
+						_vehType = ""
 					};
 				};
 			}

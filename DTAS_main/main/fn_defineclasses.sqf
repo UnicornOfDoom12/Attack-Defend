@@ -186,7 +186,7 @@ if(_Options select 0)then{ // smg
 	[],
 	[],
 	[_attackerUniform,[["FirstAidKit",5]]],
-	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",6,2],[["2Rnd_12Gauge_Slug",6,2]]]],
 	[],
 	_helmet,
 	"G_Bandanna_beast",
@@ -199,7 +199,7 @@ if(_Options select 0)then{ // smg
 	[],
 	[],
 	[_attackerUniform,[["FirstAidKit",5]]],
-	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",6,2],[["2Rnd_12Gauge_Slug",6,2]]]],
 	[],
 	_helmet,
 	"G_Bandanna_beast",
@@ -248,12 +248,12 @@ if(_Options select 0)then{ // smg
 	["ItemMap","ItemGPS","","ItemCompass","ItemWatch",""],
 	"ADR-97"
 	],
-		[	
+	[	
 	["sgun_HunterShotgun_01_F","","","",["2Rnd_12Gauge_Pellets",2],[],""],
 	[],
 	[],
 	[_defenderUniform,[["FirstAidKit",5]]],
-	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",6,2],["2Rnd_12Gauge_Slug",6,2]]],
 	[],
 	_dhelmet,
 	"G_Bandanna_beast",
@@ -266,7 +266,7 @@ if(_Options select 0)then{ // smg
 	[],
 	[],
 	[_defenderUniform,[["FirstAidKit",5]]],
-	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",15,2],[["2Rnd_12Gauge_Slug",15,2]]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["2Rnd_12Gauge_Pellets",6,2],["2Rnd_12Gauge_Slug",6,2]]],
 	[],
 	_dhelmet,
 	"G_Bandanna_beast",
@@ -392,7 +392,7 @@ if(_Options select 2)then{ // 6.5-7.62 rifles
 	[],
 	[],
 	[_attackerUniform,[["FirstAidKit",5]]],
-	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30],["6Rnd_12Gauge_Slug",6,6],["6Rnd_12Gauge_Pellets",6,6]]],
+	[_Avest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",8,30],["6Rnd_12Gauge_Slug",2,6],["6Rnd_12Gauge_Pellets",2,6]]],
 	[],
 	_helmet,
 	"G_Bandanna_beast",
@@ -459,7 +459,7 @@ if(_Options select 2)then{ // 6.5-7.62 rifles
 	[],
 	[],
 	[_defenderUniform,[["FirstAidKit",5]]],
-	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",15,30],["6Rnd_12Gauge_Slug",6,6],["6Rnd_12Gauge_Pellets",6,6]]],
+	[_Dvest,[["optic_MRCO",1],["optic_hamr",1],[_nvgs,1],["30Rnd_65x39_caseless_msbs_mag",8,30],["6Rnd_12Gauge_Slug",3,6],["6Rnd_12Gauge_Pellets",3,6]]],
 	[],
 	_dhelmet,
 	"G_Bandanna_beast",
@@ -1153,4 +1153,4 @@ dClasses = [
 
 
 
-//call fn_GetIndexOfCommand;
+call fn_GetIndexOfCommand;

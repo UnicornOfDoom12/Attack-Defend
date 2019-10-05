@@ -21,7 +21,13 @@ if (isNil {missionNameSpace getVariable ID}) then {
 
           drawIcon3D ["\a3\ui_f\data\igui\cfg\cursors\select_ca.paa", _color, _pos, 1.1, 1.1, 0];
           drawIcon3D ["", [1,1,1,0.8], _pos, 1.1, 1.1, 0, ["", _x getVariable ["shortName", name _x]] select GVAR(showHexText), 2, .027, "RobotoCondensedBold", "center", false];
-
+          private _Options = DefaultOptions;
+          {
+            if (_x getVariable ["roach",false] && !(side _x isEqualTo playerSide) && (_Options select 15))then{
+              drawIcon3D ["\a3\ui_f\data\igui\cfg\cursors\select_ca.paa",{[0.5,0,0,1]}, getPos _x, 1.1, 1.1, 0];
+              drawIcon3D ["", [1,1,1,0.8], getPos _x, 1.1, 1.1, 0, "Roach", 2, .027, "RobotoCondensedBold", "center", false];
+            };
+          }forEach allPlayers;
         };
 
         true
